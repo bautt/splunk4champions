@@ -5,7 +5,7 @@
       <html>
         <table>
           <tr>
-            <td width="20%">
+            <td width="40%">
             <ol>
               <li>
                   <a href="https://docs.splunk.com/Splexicon:Bloomfilter" target="_blank">Bloomfilter</a>
@@ -16,7 +16,7 @@
               <li>
                   <a href="https://docs.splunk.com/Splexicon:Rawdatafile" target="_blank">journal.gz</a>
                 </li>
-              
+
             </ol>
           </td>
           <td>
@@ -24,10 +24,10 @@
          </p>
       </td>
           </tr>
-          
+
         </table>
-      
-      
+
+
     </html>
     </panel>
   </row>
@@ -38,7 +38,7 @@
       <p>A data structure that you use to test whether an element is a member of a set. Splunk Enterprise uses bloom filters to decrease the time it requires to retrieve events from the index. This strategy is effective when you search for rare terms. </p>
       <p>      <img width="33%" src="/static/app/splunk4champions/images/lab3_task1_picture4.png"/>
          </p>
-    
+
       <p>
           <a href="https://docs.splunk.com/Splexicon:Bloomfilter" target="_blank">Bloomfilter in Splexicon</a>
         </p>

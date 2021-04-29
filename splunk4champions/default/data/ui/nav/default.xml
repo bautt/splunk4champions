@@ -1,10 +1,10 @@
 <nav search_view="search">
-  <a href="/app/splunk4champions/lab_engine?labname=lab1">Lab 1</a>
-  <a href="/app/splunk4champions/lab_engine?labname=lab2">Lab 2</a>
-  <a href="/app/splunk4champions/lab_engine?labname=lab3">Lab 3</a>
-  <a href="/app/splunk4champions/lab_engine?labname=lab4">Lab 4</a>
-  <a href="/app/splunk4champions/lab_engine?labname=lab5">Lab 5</a>
-  <a href="/app/splunk4champions/lab_engine?labname=lab6">Lab 6</a>
+  <a href="/app/splunk4champions/lab_engine?labname=lab1">Lab 1 - Settings</a>
+  <a href="/app/splunk4champions/lab_engine?labname=lab2">Lab 2 - Inspector</a>
+  <a href="/app/splunk4champions/lab_engine?labname=lab3">Lab 3 - Theory</a>
+  <a href="/app/splunk4champions/lab_engine?labname=lab4">Lab 4 - Data</a>
+  <a href="/app/splunk4champions/lab_engine?labname=lab5">Lab 5 - Metrics</a>
+  <a href="/app/splunk4champions/lab_engine?labname=lab6">Lab 6 - Dashboards</a>
   <collection label="Other">
     <view name="search" default='true' />
   	<view name="analytics_workspace" />
