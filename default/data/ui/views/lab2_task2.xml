@@ -1,0 +1,36 @@
+<dashboard stylesheet="s4c_dashboards.css">
+  <row>
+    <panel>
+      <title>Contents - Lab 2</title>
+      <html>
+        <ol>
+          <li >
+            <a href="lab2_task1">Utilize Job Inspector</a>
+          </li>
+          <li style="color:red">
+            Quiz
+          </li>
+        </ol>
+      </html>
+    </panel>
+  </row>
+   <row>
+    <panel>
+      <title>Task 2.1</title>
+      <html>
+      <table width="100%">
+         <tr>
+          <td width="80%">
+            <p>
+                <strong>Whats wrong?</strong></p>
+                 <p><i>Use the JobInspector to find out whats wrong! Can you name a better search?</i></p>
+                <p><br/>Click here to perform search: <a href='search?display.page.search.mode=fast&amp;q=index=_internal | search sourcetype="splunkd" | fields splunkserver' target="_blank">Search</a> and check on optimization!</p>
+                <p><img src="/static/app/splunk4champions/lab2_task2_search.png"/></p>
+          </td>
+        </tr>
+      </table>
+    </html>
+    </panel>
+  </row>
+   
+</dashboard>

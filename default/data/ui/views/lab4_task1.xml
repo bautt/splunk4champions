@@ -1,0 +1,178 @@
+<dashboard script="pageffects.js" stylesheet="s4c_dashboards.css">
+  <row>
+    <panel>
+      <title>Task 1.1</title>
+      <html>
+      <table width="100%">
+      <tr>
+            <td colspan="2">
+              <p>
+                <strong>First steps</strong>
+              </p>
+            </td>
+          </tr>
+         <tr>
+          <td>
+              <p>Create a query:<br/>Average temperature for Frankfurt (Main) for current year to date.</p>
+          </td>
+        </tr>
+      </table>
+    </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <html>
+      <code>index="s4c_weather" sourcetype=s4c_weather | spath name | search name="Frankfurt am Main" | timechart avg(main.temp) span=4h as temperature</code>
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <chart>
+        <search>
+          <query>index="s4c_weather" sourcetype=s4c_weather | spath name | search name="Frankfurt am Main" | timechart avg(main.temp) span=4h as temperature</query>
+          <earliest>@y</earliest>
+          <latest>now</latest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="charting.fieldColors">{"temperature": "#cc0000"}</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.rotation">0</option>
+        <option name="charting.axisTitleX.visibility">visible</option>
+        <option name="charting.axisTitleY.visibility">visible</option>
+        <option name="charting.axisTitleY2.visibility">visible</option>
+        <option name="charting.axisX.abbreviation">none</option>
+        <option name="charting.axisX.scale">linear</option>
+        <option name="charting.axisY.abbreviation">none</option>
+        <option name="charting.axisY.scale">linear</option>
+        <option name="charting.axisY2.abbreviation">none</option>
+        <option name="charting.axisY2.enabled">0</option>
+        <option name="charting.axisY2.scale">inherit</option>
+        <option name="charting.chart">line</option>
+        <option name="charting.chart.bubbleMaximumSize">50</option>
+        <option name="charting.chart.bubbleMinimumSize">10</option>
+        <option name="charting.chart.bubbleSizeBy">area</option>
+        <option name="charting.chart.nullValueMode">connect</option>
+        <option name="charting.chart.showDataLabels">none</option>
+        <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
+        <option name="charting.chart.stackMode">default</option>
+        <option name="charting.chart.style">shiny</option>
+        <option name="charting.drilldown">none</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="charting.layout.splitSeries.allowIndependentYRanges">0</option>
+        <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
+        <option name="charting.legend.mode">standard</option>
+        <option name="charting.legend.placement">bottom</option>
+        <option name="charting.lineWidth">2</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="trellis.enabled">0</option>
+        <option name="trellis.scales.shared">1</option>
+        <option name="trellis.size">medium</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Task 1.2</title>
+      <html>
+      <table width="100%">
+      <tr>
+            <td colspan="2">
+              <p>
+                <strong>Getting Insights</strong>
+              </p>
+            </td>
+          </tr>
+         <tr>
+          <td>
+              <p>Add a sma20 to your query:<br/>Average temperature and SMA20(temperature) for Frankfurt (Main) for current year to date.</p>
+          </td>
+        </tr>
+      </table>
+    </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <html>
+      <code>index="s4c_weather" sourcetype=s4c_weather | spath name | search name="Frankfurt am Main" | timechart span=4h avg(main.temp) as temperature | trendline sma20(temperature) as trend</code>
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <chart>
+        <search>
+          <query>index="s4c_weather" sourcetype=s4c_weather | spath name | search name="Frankfurt am Main" | timechart span=4h avg(main.temp) as temperature  | trendline sma20(temperature) as trend</query>
+          <earliest>@y</earliest>
+          <latest>now</latest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="charting.fieldColors">{"trend": "#cc0000","temperature": "#cccccc"}</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.rotation">0</option>
+        <option name="charting.axisTitleX.visibility">visible</option>
+        <option name="charting.axisTitleY.visibility">visible</option>
+        <option name="charting.axisTitleY2.visibility">visible</option>
+        <option name="charting.axisX.abbreviation">none</option>
+        <option name="charting.axisX.scale">linear</option>
+        <option name="charting.axisY.abbreviation">none</option>
+        <option name="charting.axisY.scale">linear</option>
+        <option name="charting.axisY2.abbreviation">none</option>
+        <option name="charting.axisY2.enabled">0</option>
+        <option name="charting.axisY2.scale">inherit</option>
+        <option name="charting.chart">line</option>
+        <option name="charting.chart.bubbleMaximumSize">50</option>
+        <option name="charting.chart.bubbleMinimumSize">10</option>
+        <option name="charting.chart.bubbleSizeBy">area</option>
+        <option name="charting.chart.nullValueMode">connect</option>
+        <option name="charting.chart.showDataLabels">none</option>
+        <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
+        <option name="charting.chart.stackMode">default</option>
+        <option name="charting.chart.style">shiny</option>
+        <option name="charting.drilldown">none</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="charting.layout.splitSeries.allowIndependentYRanges">0</option>
+        <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
+        <option name="charting.legend.mode">standard</option>
+        <option name="charting.legend.placement">bottom</option>
+        <option name="charting.lineWidth">2</option>
+        <option name="trellis.enabled">0</option>
+        <option name="trellis.scales.shared">1</option>
+        <option name="trellis.size">medium</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <html>
+      <table width="100%">
+      <tr>
+            <td colspan="2">
+              <p>
+                <strong>Onboard Data</strong>
+              </p>
+            </td>
+          </tr>
+         <tr>
+          <td>
+              <p>Please check out the sourcetype we created for you:</p>
+              <p>
+                <img src="/static/app/splunk4champions/images/lab4_task1_sourcetype.png" width="450px"/>
+              </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+              <p>Please check out the data we onboarded for you:</p>
+              <p>
+                <img src="/static/app/splunk4champions/images/lab4_task1_xml.png"/>
+              </p>
+          </td>
+        </tr>
+      </table>
+    </html>
+    </panel>
+  </row>
+</dashboard>

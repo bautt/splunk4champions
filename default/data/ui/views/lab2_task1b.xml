@@ -1,0 +1,56 @@
+<form script="pageffects.js" stylesheet="s4c_dashboards.css">
+  <fieldset submitButton="false">
+
+  </fieldset>
+   <row>
+    <panel>
+      <html>
+      <table width="100%">
+         <tr>
+          <td width="80%">
+            <p>
+                <strong>Optimize searches 1</strong></p>
+                 <p><i>Run the Search and oberserve the details presented for "optimizedSearch"</i></p>
+                <code>index=_internal | search sourcetype="splunkd" | fields splunkserver</code>
+          </td>
+        </tr>
+      </table>
+    </html>
+    </panel>
+  </row>
+
+    <row>
+   <panel>
+      <html>
+       <table width="100%">
+         <tr>
+          <td width="80%">
+            <p><strong>Optimize searches 2</strong></p>
+            <p><i>Check out the ressource utilized and the time it took to execute those queries. Tell us wich search is better and why?</i></p>
+            <p>That one...</p>
+            <code>index="s4c_weather" earliest="02/01/2021:00:00:00" latest="03/01/2021:00:00:00" |table name  | stats count by name </code>
+            <p><br/>...or that one?</p>
+            <code>index="s4c_weather" earliest="02/01/2021:00:00:00" latest="03/01/2021:00:00:00" | stats count by name</code>
+          </td>
+        </tr>
+      </table>
+    </html>
+    </panel>
+   </row>
+   <row>
+   <panel>
+      <html>
+       <table width="100%">
+         <tr>
+          <td width="80%">
+            <p><strong>Optimize searches 3</strong></p>
+            <p><i>Oberserve "diskUsage", "searchTotalBucketsCount" [...]</i></p>
+            <p>Change the timespan in the search and oberserve details for "diskUsage", "searchTotalBucketsCount".</p>
+            <code>index="s4c_weather" sourcetype=s4c_weather</code>
+          </td>
+        </tr>
+      </table>
+    </html>
+    </panel>
+    </row>
+</form>

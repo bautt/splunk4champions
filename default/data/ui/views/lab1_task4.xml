@@ -1,0 +1,68 @@
+<dashboard stylesheet="s4c_dashboards.css">
+  <row>
+    <panel>
+      <title>User language and locale</title>
+      <html>
+      <p>When a user logs in, Splunk automatically uses the language that the user's browser is set to. To switch languages, change the browser's locale setting. Locale configurations are browser-specific.</p>
+      <p>Splunk detects locale strings. A locale string contains two components: a language specifier and a localization specifier. This is usually presented as two lowercase letters and two uppercase letters linked by an underscore. For example, "en_US" means US English and "en_GB" means British English and "de_DE" means German. </p>
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <html>
+        <p>Change locale by modifing the url:</p>
+        <img src="/static/app/splunk4champions/images/lab1_task4_example.png"/>
+        </html>
+    </panel>
+  </row>
+  
+  <row>
+    <panel>
+      <html>
+        <table>
+        <tr>
+         <td>ISO-String</td>
+         <td>Language</td>
+        </tr>
+        <tr>
+          <td>en_GB</td>
+          <td>English (british)</td>
+        </tr>
+        <tr>
+          <td>en_US</td>
+          <td>English (US)</td>
+        </tr>
+        <tr>
+          <td>de_DE</td>
+          <td>Deutsch</td>
+        </tr>
+        <tr>
+          <td>fr_FR</td>
+          <td>French</td>
+        </tr>
+        <tr>
+          <td>it_IT</td>
+          <td>Italian</td>
+        </tr>
+        <tr>
+          <td>ja_JP</td>
+          <td>Japanese</td>
+        </tr>
+        <tr>
+          <td>ko_KR</td>
+          <td>Korean</td>
+        </tr>
+        <tr>
+          <td>zh_CN</td>
+          <td>Chinese (Traditional)</td>
+        </tr>
+        <tr>
+          <td>zh_TW</td>
+          <td>Chinese (Taiwan)</td>
+        </tr>
+        </table>
+      </html>
+    </panel>
+  </row>
+</dashboard>

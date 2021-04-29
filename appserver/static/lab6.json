@@ -1,0 +1,37 @@
+[
+    {
+        "id" : "lab6_task1",
+        "title" : "Basesearch",
+        "lab": ["lab1"]
+    },
+    {
+        "id" : "lab6_task2",
+        "title" : "Drilldown",
+        "lab": ["lab1"],
+        "references":[
+            {"title":"Chartcontrols - Pan and Zoom","link":"https://docs.splunk.com/Documentation/Splunk/latest/Viz/Chartcontrols#Pan_and_zoom_chart_controls"}
+        ]
+    },
+    {
+        "id" : "lab6_task4",
+        "title" : "Switches with Tokens",
+        "lab": ["lab1"]
+    },
+    {
+        "id" : "lab6_task5",
+        "title" : "Time-Zone Token",
+        "lab": ["lab1"]
+    },
+    {
+        "id" : "lab6_task3",
+        "title" : "Annotations",
+        "lab": ["lab1"],
+        "references":[
+            {"title":"Chart Event-Annotations","link":"https://docs.splunk.com/Documentation/Splunk/latest/Viz/ChartEventAnnotations"}
+        ]
+
+        
+
+    }
+
+]

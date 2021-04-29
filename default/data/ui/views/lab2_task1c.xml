@@ -1,0 +1,23 @@
+<form script="pageffects.js" stylesheet="s4c_dashboards.css">
+  <fieldset submitButton="false">
+   
+  </fieldset>
+  
+   <row>
+    <panel>
+      <title>Task</title>
+      <html>
+      <table width="100%">
+         <tr>
+          <td width="80%">
+            <p><strong>Optimize searches 2</strong></p>
+            <p><i>Oberserve "diskUsage", "searchTotalBucketsCount" [...]</i></p>
+            <p>Change the timespan in the search and oberserve details for "diskUsage", "searchTotalBucketsCount".</p>
+            <code>index="s4c_weather" sourcetype=s4c_weather</code>
+          </td>
+        </tr>
+      </table>
+    </html>
+    </panel>
+  </row>
+</form>

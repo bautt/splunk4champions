@@ -1,0 +1,90 @@
+<dashboard stylesheet="s4c_dashboards.css">
+  <row>
+    <panel>
+      <title>Bucket</title>
+      <html>
+       <p>
+        <img src="/static/app/splunk4champions/images/lab3_task0_picture1.png" width="300"/>
+      </p>
+      <p>A file system directory containing a portion of a Splunk Enterprise index. A Splunk Enterprise index typically consists of many buckets, organized by age.<br/>Note: The bucket search command is not related to the index buckets described here. Its purpose is to put continuous numerical values into discrete sets or bins. The bucket command is actually an alias for the bin command. See the bin command in the Search Reference.
+      </p>
+    </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+       <html>
+       
+      <p>Note: Indexer clusters are groups of Splunk Enterprise indexers configured to replicate each others' data, so that the system keeps multiple copies of all data. This process is known as index replication. By maintaining multiple, identical copies of Splunk Enterprise data, clusters prevent data loss while promoting data availability for searching.</p>
+    </html>
+    </panel>
+  </row>
+  
+  <row>
+    <panel>
+      <title>How Are Events Stored?</title>
+      <html>
+       <p>
+        <img src="/static/app/splunk4champions/images/lab3_task0_picture2.png" width="450"/>
+      </p>
+      <h3>Hot/Warm Storage</h3>
+      <ul>
+        <li>New data lives here</li>
+        <li>At least 1 hot bucket per index, per indexer</li>       
+         <li>800+ IOPS (!)</li>       
+      </ul>
+      <p>Buckets roll from Hot to Warm when....</p>  
+      <ul>
+        <li>We get too many hot buckets [maxHotBuckets]</li>
+        <li>The timespan of a bucket gets too large</li>
+        <li>A hot bucket hasn’t received data in a while</li>
+        <li>Bucket metadata files have grown too large</li>
+        <li>There is an index clustering replication error</li>
+      </ul>
+      <h3>Cold Storage</h3>
+      <ul>
+        <li>Historical data goes here</li>
+        <li>Allows older data to be kept on slower (cheaper) storage</li>  
+        <li>Don’t go below 350 IOPS</li>
+      </ul>
+      <p>Buckets roll from Warm to Cold when...</p>  
+      <ul>
+        <li>We get too many Warm  buckets [maxWarmDBCount]</li>
+      </ul>
+      <h3>Frozen Storage</h3>
+      <ul>
+        <li>No longer searchable</li>
+      </ul>
+      <p>Data rolls from Cold to Frozen when...</p>  
+      <ul>
+        <li>The total size of the index (Hot+Warm+Cold) grows too large</li>
+        <li>The oldest event in a bucket exceeds a specific age</li>
+      </ul>
+    </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Retention</title>
+      <html>
+       <p>
+        <img src="/static/app/splunk4champions/images/lab3_task0_picture3.png" width="450"/>
+      </p>
+      <p>When do we roll data?</p>
+      <p>Control retention for all indexes that reference the volume. Oldest bucket in the volume is deleted/frozen when defined size is exceeded.</p>
+    </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>SmartStore</title>
+      <html>
+      <p>A SmartStore-enabled index minimizes its use of local storage, with the bulk of its data residing on remote object stores such as S3 or GCS.</p>
+      <p>Indexing and searching of data occurs on the indexer, just as in a traditional deployment that stores all data locally.</p>
+      <p>The key difference with SmartStore is that the remote object store becomes the location for master copies of warm buckets, while the indexer's local storage is used to cache copies of warm buckets currently participating in a search or that have a high likelihood of participating in a future search.</p>
+      <p>A cache manager on the indexer fetches copies of warm buckets from the remote store and places them in the indexer's local cache when the buckets are needed for a search. The cache manager also evicts warm bucket copies from the cache once their likelihood of being searched again diminishes.</p>
+      <a href="https://docs.splunk.com/Documentation/Splunk/8.1.1/Indexer/SmartStorearchitecture">https://docs.splunk.com/Documentation/Splunk/8.1.1/Indexer/SmartStorearchitecture</a>
+    </html>
+    </panel>
+  </row>
+</dashboard>

@@ -1,0 +1,41 @@
+[
+    {
+        "id" : "lab3_task4",
+        "title" : "Whats is a Bucket?",
+        "lab": ["lab1"],
+        "references":[
+            {"title":"TSIDX in Splexicon","link":"https://docs.splunk.com/Splexicon:Tsidxfile"},
+            {"title":"journal.gz in Splexicon","link":"https://docs.splunk.com/Splexicon:Rawdatafile"},
+                  {"title":"Bloomfilter in Splexicon","link":"https://docs.splunk.com/Splexicon:Bloomfilter"},
+      {"title":"Interactive Bloomfilter-Demo","link":"https://www.jasondavies.com/bloomfilter/"},
+      {"title":"How SplunkStores Data","link":"https://conf.splunk.com/files/2017/slides/splunk-data-life-cycle-determining-when-and-where-to-roll-data.pdf"},
+      {"title":"SmartStore architecture overview","link":"https://docs.splunk.com/Documentation/Splunk/latest/Indexer/SmartStorearchitecture"},
+      {"title":"Index Compression","link":"https://docs.splunk.com/Documentation/Splunk/latest/Indexer/Reducetsidxdiskusage"}
+        ]
+
+    },
+     {
+        "id" : "lab3_task1",
+        "title" : "Whats in a Bucket?",
+        "lab": ["lab1"],
+        "references":[]
+
+    },
+    {
+        "id" : "lab3_task2",
+        "title" : "Search Tipps",
+        "lab": ["lab1"],
+        "references": [        
+            {"title":"Require","link":"https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/Require"},
+            {"title":"Search Reference","link":"https://www.splunk.com/pdfs/solution-guides/splunk-quick-reference-guide.pdf"},
+            {"title":"Limits.conf","link":"https://docs.splunk.com/Documentation/Splunk/latest/Admin/Limitsconf"}]
+    },
+    {
+        "id" : "lab3_task3",
+        "title" : "Quiz",
+        "lab": ["lab1"]
+        
+
+    }
+
+]

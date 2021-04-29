@@ -1,0 +1,13 @@
+<setup>
+<block title="Welcome to the Splunk4Champions App">
+ <text><![CDATA[ <p>PLEASE READ CAREFULLY: We will create indexes and onboard data to those indexes in order to fuel the dashboards and searches utilized in this training. I understand that this counts as daily ingest and might also eat up some diskspace.</p><p><strong>The raw-package uploaded to your instance has currently a size of 78MB.</strong></p>
+ <p>We are going to create the following indexes and add data to them:</p><ul><li>s4c_weather (events)</li><li>s4c_stocks (events)</li><li>s4c_metrics (metrics)</li><li>s4c_access (events)</li></ul> ]]></text>
+</block>
+<block title="User Acceptance" endpoint="configs/conf-splunk4champions">
+ <input entity="install" field="is_agreed">
+ <label>I have read the terms and conditions of the license and agree to be bound
+by them.</label>
+ <type>bool</type>
+ </input>
+ </block>
+</setup>

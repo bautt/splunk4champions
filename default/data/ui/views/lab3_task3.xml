@@ -1,0 +1,94 @@
+<dashboard script="pageffects.js" stylesheet="s4c_dashboards.css">
+  <row>
+    <panel>
+      <title>Task</title>
+      <html>
+      <table width="100%">
+      <tr>
+            <td colspan="2">
+              <p>
+                <strong>Which search is better?</strong>
+              </p>
+            </td>
+          </tr>
+         <tr>
+          <td style="text-align: center;">
+              <code>index="_introspection" component=PerProcess "data.process"=splunkd | rename "data.pid" as processId | stats last(_time) as _time, count as eventcount by processId | where eventcount &gt; 10</code>
+              <h3>VS:</h3>
+              <code>index="_introspection" component=PerProcess "data.process"=splunkd | stats last(_time) as _time, count as eventcount by "data.pid" | rename "data.pid" as processId | where eventcount &gt; 10</code>
+          </td>
+        </tr>
+      </table>
+    </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Task</title>
+      <html>
+          <table width="100%">
+            <tr>
+              <td colspan="2">
+                <p>
+                  <strong>Which search is better?</strong>
+                </p>
+              </td>
+            </tr>
+           <tr>
+            <td style="text-align: center;">
+                <code>index="_introspection" component=PerProcess "data.process"=splunkd| stats last(_time) as _time, count as eventcount by "data.pid"| rename "data.pid" as processId | where eventcount &gt; 10</code>
+                <h3>VS:</h3>
+                <code>index="_introspection"  "data.process"=splunkd | transaction "data.pid"| rename "data.pid" as processId |  table _time, processId, eventcount| search eventcount &gt; 10</code>
+            </td>
+          </tr>
+        </table>
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Task</title>
+      <html>
+          <table width="100%">
+            <tr>
+              <td colspan="2">
+                <p>
+                  <strong>Which search is better?</strong>
+                </p>
+              </td>
+            </tr>
+           <tr>
+            <td style="text-align: center;">
+                <code>index="_audit" | join type=left host [search index="_audit" | stats count as eventcount by host]</code>
+                <h3>VS:</h3>
+                <code>index="_audit" | eventstats count as eventcount by host</code>
+            </td>
+          </tr>
+        </table>
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Task</title>
+      <html>
+          <table width="100%">
+            <tr>
+              <td colspan="2">
+                <p>
+                  <strong>Which search is better?</strong>
+                </p>
+              </td>
+            </tr>
+           <tr>
+            <td style="text-align: center;">
+                <code>index="_audit" | stats count as host_count by host | appendcols [search index="_audit" | stats count by component]</code>
+                <h3>VS:</h3>
+                <code>index="_audit" | eventstats count as host_count by host | stats count by component, host_count, host</code>
+            </td>
+          </tr>
+        </table>
+      </html>
+    </panel>
+  </row>
+</dashboard>

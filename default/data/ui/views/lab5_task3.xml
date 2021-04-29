@@ -1,0 +1,26 @@
+<dashboard script="pageffects.js" stylesheet="s4c_dashboards.css">
+   <row>
+    <panel>
+      <title>Using mcatalog command</title>
+      <html>
+         <code>| mcatalog values(metric_name) WHERE index=* | mcatalog values(metric_name) WHERE metric_name=”disk*” AND index=*</code>
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Using mstats command</title>
+      <html>
+         <code>| mstats max(CO2) prestats=t  WHERE index=raspi span=10m | timechart span=10m max(CO2) AS PPM</code>
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Using msearch command</title>
+      <html>
+         <code>| msearch index=_metrics | msearch index=_metrics filter="group=dutycycle name=ingest thread=udp"</code>
+      </html>
+    </panel>
+  </row>
+</dashboard>

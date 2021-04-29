@@ -1,0 +1,58 @@
+<dashboard script="pageffects.js" stylesheet="s4c_dashboards.css">
+    <row>
+    <panel>
+      <title>Create metrics index named “s4c_mweather” </title>
+      <html>
+      <table width="100%">
+        <tr>
+          <td>
+            
+           <p>
+                <img src="/static/app/splunk4champions/images/lab6_task4_image1.png" width="450"/>
+              </p>
+               
+          </td>
+        </tr>
+      </table>
+    </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+       <title>CONVERT WEATHER DATA TO METRICS</title>
+     <html>
+      <table width="100%">
+        <tr>
+          <td>
+            
+           <code>index=s4c_weather 
+<br/>| rename clouds.all AS weather.Clouds main.temp AS weather.Temperature main.temp_max AS weather.MaxTemp  main.temp_min AS weather.MinTemp main.humidity AS weather.Humidity main.pressure AS weather.Pressure wind.speed AS weather.Windspeed  visibility AS weather.Visibility wind.deg AS weather.WindDirection coord.lat AS weather.Lat coord.lon AS weather.Lon weather{}.id AS weather.Id
+<br/>| stats first(weather.*) by  _time name
+<br/>| rename first(*) AS *
+<br/>| filldown
+ <br/>| mcollect index=s4c_mweather split=true name
+</code>
+               
+          </td>
+        </tr>
+      </table>
+    </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+       <title>Diagnosis</title>
+     <html>
+      <table width="100%">
+        <tr>
+          <td>
+            
+          <p>The following issues can cause metrics to not appear in the Data panel</p>
+          <ul><li>No metrics with timestamps in the past 24 hours are available.</li></ul>  
+          </td>
+        </tr>
+      </table>
+    </html>
+    </panel>
+  </row>
+</dashboard>

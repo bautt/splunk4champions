@@ -1,0 +1,59 @@
+<form stylesheet="s4c_dashboards.css">
+  <fieldset submitButton="false">
+
+  </fieldset>
+
+  <row>
+    <panel>
+      <title>Job Inspector</title>
+      <html>
+      <table width="100%">
+        <tr>
+          <td width="100%">
+            <p><img src="/static/app/splunk4champions/images/lab2_task1_howto1.png" width="100%"/></p>
+          </td>
+
+        </tr>
+      </table>
+    </html>
+    </panel>
+  </row>
+   <row>
+    <panel>
+      <title>Execution Costs</title>
+      <html>
+      <table width="100%">
+        <tr>
+           <td>
+            <p>The Execution costs section lists information about the components of the search and how much impact each component has on the overall performance of the search.</p>
+
+          </td>
+          <td width="80%">
+            <p><img src="/static/app/splunk4champions/images/lab2_task1_insp1.png" width="50%"/></p>
+          </td>
+
+        </tr>
+      </table>
+    </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Search Job Properties</title>
+      <html>
+      <table width="100%">
+        <tr>
+           <td>
+            <p>The Search job properties section lists other characteristics of the job.</p>
+          </td>
+          <td width="80%">
+                <p><img src="/static/app/splunk4champions/images/lab2_task1_insp2.png" width="50%"/></p>
+
+
+          </td>
+        </tr>
+      </table>
+    </html>
+    </panel>
+  </row>
+</form>

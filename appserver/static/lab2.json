@@ -1,0 +1,40 @@
+[
+    {
+        "id" : "lab2_task1",
+        "title" : "Utilize Job Inspector ",
+        "lab": ["lab1"],
+        "references":[
+            {
+                "title":"SplunkWiki Video : Using the Splunk Search Job Inspector",
+                "link": "https://www.youtube.com/watch?v=n3OqaB6GVXs"
+            },
+            {
+                "title":"Splunk > Clara-fication: Job Inspector",
+                "link": "https://www.splunk.com/en_us/blog/tips-and-tricks/splunk-clara-fication-job-inspector.html"
+            }
+        ]
+
+    },
+    {
+        "id" : "lab2_task1a",
+        "title" : "Fun with Job Inspector #1",
+        "lab": ["lab1"],
+        "references":[]
+
+    },
+    {
+        "id" : "lab2_task1b",
+        "title" : "Fun with Job Inspector #2",
+        "lab": ["lab1"],
+        "references":[]
+
+    },
+    {
+        "id" : "lab2_task4",
+        "title" : "Other useful tools",
+        "lab": ["lab1"],
+        "references":[
+            {"title":"Monitoring Splunk Enterprise Indexing: Performance","link":"https://docs.splunk.com/Documentation/Splunk/latest/DMC/IndexingDeployment"}]
+
+    }
+]

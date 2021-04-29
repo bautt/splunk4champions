@@ -1,0 +1,29 @@
+<form script="pageffects.js" stylesheet="s4c_dashboards.css">
+  <fieldset submitButton="false"></fieldset>
+  <row>
+    <panel>
+      <title>Task</title>
+      <html>
+        <h4>Share inspector results with your colleagues!</h4>
+        <p>Run the search below and share searchinformation by sharing the SearchId. Extract a serch id from a search job and open manager endpoint on searchhead.</p>
+        <p>Run the search:</p>
+         <code>index="s4c_weather" earliest="01/01/2021:00:00:00" latest="02/01/2021:00:00:00" |table name  | stats count by name </code>
+         <p>
+          <br/>You can find the SearchId here:<br/>
+          <img src="/static/app/splunk4champions/images/lab2_task1_hint1.png"/>
+        </p>
+    </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <input type="text" token="jobsid" placeholder="Enter SearchId">
+        <label>Enter the search id into the box from JobInspector here:</label>
+      </input>
+      <html>
+        <p>Click here to open endpoint with jobinspector results: <a href="/manager/search/job_inspector?sid=$jobsid$" target="_blank">/manager/search/job_inspector?sid=$jobsid$</a>
+        </p>
+       </html>
+    </panel>
+  </row>
+</form>

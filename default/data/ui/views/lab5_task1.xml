@@ -1,0 +1,38 @@
+<dashboard stylesheet="s4c_dashboards.css">
+    <row>
+    <panel>
+      <title>Bring the dots together....</title>
+      <html>
+      <table width="100%">
+        <tr>
+          <td>
+            
+           <p>
+                <img src="/static/app/splunk4champions/images/lab6_task1_image1.png"/>
+              </p>
+               
+          </td>
+        </tr>
+      </table>
+    </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+       <title>Metrics in Splunk 8</title>
+     <html>
+      <table width="100%">
+        <tr>
+          <td>
+            
+           <p>
+                <img src="/static/app/splunk4champions/images/lab6_task1_image2.png"/>
+              </p>
+               
+          </td>
+        </tr>
+      </table>
+    </html>
+    </panel>
+  </row>
+</dashboard>

@@ -1,0 +1,28 @@
+[
+    {
+        "id" : "lab5_task1",
+        "title" : "Introduction to metrics",
+        "lab": ["lab1"]
+    },
+    {
+        "id" : "lab5_task2",
+        "title" : "OnBoarding Metrics",
+        "lab": ["lab1"],
+        "references":[
+            {"title":"Metrics documentation","link":"https://docs.splunk.com/Documentation/Splunk/8.0.5/Metrics/Overview"},
+            {"title":"Splunk education: Working with Metrics in Splunk","link":"https://education.splunk.com/category/working-with-metrics-in-splunk"},
+            {"title":"Logs2metrics","link":"https://docs.splunk.com/Documentation/Splunk/latest/Metrics/L2MOverview"},
+            {"title":"Onboarding metrics","link":"https://docs.splunk.com/Documentation/Splunk/8.0.5/Metrics/GetMetricsInOther"}
+        ]
+    },
+    {
+        "id" : "lab5_task3",
+        "title" : "Searching Metrics",
+        "lab": ["lab1"]
+    },
+    {
+        "id" : "lab5_task4",
+        "title" : "Metrics-Lab",
+        "lab": ["lab1"]
+    }
+]

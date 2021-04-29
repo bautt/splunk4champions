@@ -1,0 +1,23 @@
+<dashboard stylesheet="s4c_dashboards.css">
+  <row>
+    <panel>
+      <title>limits.conf</title>
+      <html>
+      <p>This file contains descriptions of the settings that you can use to configure limitations for the search commands.</p>
+      
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>How can I increase the search return limit?</title>
+      <html>
+        <p>The default value of 50000 can be modified by editing the [searchresults] stanza in limits.conf:</p>
+        <code>
+          <p>[searchresults]</p>
+          <p>maxresultrows = 100000</p>
+        </code>
+      </html>
+    </panel>
+  </row>
+</dashboard>

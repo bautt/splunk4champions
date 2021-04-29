@@ -1,0 +1,7 @@
+<dashboard script="example_all.js" stylesheet="s4c_dashboards.css">
+  <label>Splunk4Champions</label>
+  <row>
+    <panel id="empty_container">
+    </panel>
+  </row>
+</dashboard>

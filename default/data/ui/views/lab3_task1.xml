@@ -1,0 +1,77 @@
+<dashboard stylesheet="s4c_dashboards.css">
+  <row>
+    <panel>
+      <title>Whats in a Bucket</title>
+      <html>
+        <table>
+          <tr>
+            <td width="20%">
+            <ol>
+              <li>
+                  <a href="https://docs.splunk.com/Splexicon:Bloomfilter" target="_blank">Bloomfilter</a>
+                </li>
+              <li>
+                  <a href="https://docs.splunk.com/Splexicon:Tsidxfile" target="_blank">TSIDX</a>
+                </li>
+              <li>
+                  <a href="https://docs.splunk.com/Splexicon:Rawdatafile" target="_blank">journal.gz</a>
+                </li>
+              
+            </ol>
+          </td>
+          <td>
+              <p>      <img width="33%" src="/static/app/splunk4champions/images/lab3_task1_picture1.png"/>
+         </p>
+      </td>
+          </tr>
+          
+        </table>
+      
+      
+    </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Bloomfilter</title>
+      <html>
+      <p>A data structure that you use to test whether an element is a member of a set. Splunk Enterprise uses bloom filters to decrease the time it requires to retrieve events from the index. This strategy is effective when you search for rare terms. </p>
+      <p>      <img width="33%" src="/static/app/splunk4champions/images/lab3_task1_picture4.png"/>
+         </p>
+    
+      <p>
+          <a href="https://docs.splunk.com/Splexicon:Bloomfilter" target="_blank">Bloomfilter in Splexicon</a>
+        </p>
+      <p>
+          <a href="https://www.jasondavies.com/bloomfilter/" target="_blank">Interactive Bloomfilter-Demo</a>
+        </p>
+    </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>TSIDX</title>
+      <html>
+        <p>A time-series index file, also called an index file. A tsidx file associates each unique keyword in your data with location references to events, which are stored in a companion rawdata file. Together, the rawdata file and its related tsidx files make up the contents of an index bucket. </p>
+    <p>      <img width="33%" src="/static/app/splunk4champions/images/lab3_task1_picture2.png"/>
+         </p>
+    <p>
+          <a href="https://docs.splunk.com/Splexicon:Tsidxfile" target="_blank">TSIDX in Splexicon</a>
+        </p>
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>journal.gz</title>
+      <html>
+        <p>A compressed file in an index bucket that contains event data, as well as journal information that the indexer can use to reconstitute the index’s index files. The rawdata file and the index files together constitute the files in a bucket. </p>
+    <p>      <img width="20%" src="/static/app/splunk4champions/images/lab3_task1_picture3.png"/>
+         </p>
+        <p>
+          <a href="https://docs.splunk.com/Splexicon:Rawdatafile" target="_blank">journal.gz in Splexicon</a>
+        </p>
+      </html>
+    </panel>
+  </row>
+</dashboard>

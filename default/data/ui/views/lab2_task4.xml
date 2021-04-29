@@ -1,0 +1,56 @@
+<dashboard stylesheet="s4c_dashboards.css">
+  <row>
+    <panel>
+      <title>cluster_health_tools</title>
+      <html>
+      <table width="100%">
+         <tr>
+          <td width="80%">
+            <p>Richard Morgan's cluster_health_tools can be found here</p>
+            <p>
+              <a href="https://github.com/silkyrich/cluster_health_tools/tree/master/default">https://github.com/silkyrich/cluster_health_tools/tree/master/default</a>
+            </p>
+          </td>
+        </tr>
+      </table>
+    </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>SPL Rehab</title>
+      <html>
+      <table width="100%">
+         <tr>
+          <td width="80%">
+            <p>This has been designed to introduce a controlled step-through process for your searches and remove the pain of searching through the job inspector or search logs when your search hasn't worked as you expected. Have you ever found yourself looking at a search that hasn't produced the results you expected? Wondered why it took too long to run? When you are faced with the prospect of scouring the Job Inspector or deleting half your search to find the answers, we refer to it as entering "Rehab"! </p>
+                <p>
+                <a href="https://splunkbase.splunk.com/app/3541/">https://splunkbase.splunk.com/app/3541/</a>
+              </p>
+          </td>
+        </tr>
+      </table>
+    </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Bloodhound App for Splunk</title>
+      <html>
+      <table width="100%">
+         <tr>
+          <td width="80%">
+            <p>Bloodhound is a dynamic visualization tool that detects user bad practices in order to enhance performance in Splunk environments. By monitoring user interaction within the Splunk platform, the app is able to evaluate search and dashboard structure, offering actionable insight.
+
+                </p>
+                <p>
+                <a href="https://splunkbase.splunk.com/app/4554/">https://splunkbase.splunk.com/app/4554//</a>
+              </p>
+          </td>
+        </tr>
+      </table>
+    </html>
+    </panel>
+  </row>
+  
+</dashboard>

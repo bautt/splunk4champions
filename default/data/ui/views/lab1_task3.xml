@@ -1,0 +1,55 @@
+<dashboard stylesheet="s4c_dashboards.css">
+  <row>
+    <panel>
+      <title>Make searches easier to read</title>
+      <html>
+      <table width="100%">
+        <tr>
+          <td width="80%">
+            <p>Long searches can be difficult to read. For example, the following search uses multiple commands and includes many occurrences of renaming columns in the search results. </p>
+            <p>
+                <img src="/static/app/splunk4champions/images/lab1_task3_howto1.png"/>
+              </p>
+              <h3>On Linux or Windows use Ctrl + \ . You can also use <b> Ctrl + Shift + F </b>, which works well with many non-English keyboards.</h3>
+              <h3>On Mac OSX use Command + \. You can also use <b> Command + Shift + F </b> , which works well with many non-English keyboards.</h3>
+              <br/>
+            <p>
+               <img src="/static/app/splunk4champions/images/lab1_task3_howto2.png"/>
+              </p>
+              <p>Visit <a href="https://docs.splunk.com/Documentation/Splunk/latest/Search/Parsingsearches#Search_bar_shortcuts" target="_blank">https://docs.splunk.com/Documentation/Splunk/latest/Search/Parsingsearches#Search_bar_shortcuts</a> to learn more about searchbar shortcuts;
+              </p>
+          </td>
+          <td>
+             <p>Click here to perform a very long search: <a href="search?display.page.search.mode=fast&amp;q=search index=s4c_access status=200 | stats count AS views count(eval(action=&quot;addtocart&quot;)) AS addtocart count(eval(action=&quot;purchase&quot;)) AS purchases by productName | eval viewsToPurchases=(purchases/views)*100 | eval cartToPurchases=(purchases/addtocart)*100 | table productName views addtocart purchases viewsToPurchases cartToPurchases | rename productName AS &quot;Product Name&quot;, views AS &quot;Views&quot;, addtocart as &quot;Adds To Cart&quot;, purchases AS &quot;Purchases&quot;&amp;earliest=0&amp;latest=" target="_blank">Search</a>
+              </p>
+          </td>
+        </tr>
+      </table>
+    </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Expand Macros</title>
+      <html>
+      <table width="100%">
+        <tr>
+          <td width="80%">
+            <p>You want to know whats hiding behind your Macros? Find out with this handy Shortcut! </p>
+            <p>
+                <img src="/static/app/splunk4champions/images/lab1_task3_howto3.png"/>
+              </p>
+              <h3>On Linux or Windows use Ctrl + Shift + E.</h3>
+              <h3>On Mac OSX use Command + Shift + E. </h3>
+              <br/>
+          </td>
+          <td>
+             <p>Click here to perform a search with a macro: <a href="search?display.page.search.mode=fast&amp;q=search `s4c_testmacro`&amp;earliest=0&amp;latest=" target="_blank">Search</a>
+              </p>
+          </td>
+        </tr>
+      </table>
+    </html>
+    </panel>
+  </row>
+</dashboard>

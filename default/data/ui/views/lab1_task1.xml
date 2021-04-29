@@ -1,0 +1,87 @@
+<dashboard stylesheet="s4c_dashboards.css">
+  <row>
+    <panel>
+      <title>Splunk Search Assistant</title>
+      <html>
+      <table width="100%">
+        <tr>
+          <td width="50%">
+            <p>Click here for more information: <a href="https://www.splunk.com/view/SP-CAAAE3A" target="_blank">https://www.splunk.com/view/SP-CAAAE3A</a>
+              </p>
+           
+          </td>
+          <td>
+           <p>
+                <img src="/static/app/splunk4champions/images/s4c_task1_howto1.gif"/>
+              </p>
+               
+          </td>
+        </tr>
+      </table>
+    </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Splunk Search Assistant</title>
+      <html>
+      <table width="100%">
+        <tr>
+          <td width="50%">
+          <p> A reference guide for the Search Processing Language commands and syntax that you can access from the search bar. When search assistant is active it displays typeahead information as you type terms into the bar. 
+          When you type a search command into the bar, 
+         search assistant displays information for how to use the command, usage examples, a history of recent searches you built that use the command, and so on. Search assistant also includes a link to the search command's documentation.</p>
+         <p> Search Assistant has three modes: Full, Compact and None</p>
+              <p>Click here for more information: <a href="https://docs.splunk.com/Documentation/Splunk/latest/Search/Usingthesearchassistant" target="_blank">https://docs.splunk.com/Documentation/Splunk/latest/Search/Usingthesearchassistant</a>
+              </p>
+          </td>
+          <td>
+            <p>
+                <img src="/static/app/splunk4champions/images/lab1_task1_howto1.png"/>
+              </p>
+          
+          </td>
+        </tr>
+      </table>
+    </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Line number</title>
+      <html>
+      <table width="100%">
+        <tr>
+          <td width="50%">
+<p>Line numbers make it easier to document and refer to SPL code</p>
+          </td>
+          <td>
+            <p>
+                <img src="/static/app/splunk4champions/images/lab1_task1_howto2.png"/>
+              </p>
+          </td>
+        </tr>
+      </table>
+    </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Search auto-format</title>
+      <html>
+      <table width="100%">
+        <tr>
+          <td width="50%">
+            <p>AutoFormat makes SPL more readable</p>
+          </td>
+          <td>
+           <p>
+                <img src="/static/app/splunk4champions/images/lab1_task1_howto3.png"/>
+              </p>
+          </td>
+        </tr>
+      </table>
+    </html>
+    </panel>
+  </row>
+</dashboard>

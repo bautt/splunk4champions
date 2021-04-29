@@ -1,0 +1,49 @@
+<dashboard stylesheet="s4c_dashboards.css">
+  <row>
+    <panel>
+      <title>UF</title>
+      <html>
+           <p>Write metrics to a file and extract _time, metric_name(s) and dim(s) fields and send it to the metrics index through UF</p>
+    </html>
+    </panel>
+  </row>
+    <row>
+    <panel>
+      <title>HEC </title>
+      <html>
+         <p>Use a HEC to receive events send via HTTP(S). Send multivalue metric through curl to HEC example:</p>
+         <p><code>curl -k https://SPLUNK_SERVER:8088/services/collector -H "Authorization: Splunk YOUR_HEC_ID" -d '{"time": 1486683865.000,"event":"metric","source":"disk","host":"host_1.splunk.com","fields":{"region":"us-west-1","datacenter":"dc1","rack":"63","os":"Ubuntu16.10","arch":"x64","team":"LON","service":"6","service_version":"0","service_environment":"test","path":"/dev/sda1","fstype":"ext3","metric_name:cpu.usr": 11.12,"metric_name:cpu.sys": 12.23, "metric_name:cpu.idle": 13.34}}'</code></p>
+    </html>
+    </panel>
+  </row>
+    <row>
+    <panel>
+      <title>Log2metrics conversion at the ingest time</title>
+      <html>
+           <ul>
+             <li>Use “Log to Metrics” category and create a new source type</li>
+             <li>json, csv, tsv, psv, w3c,field_extraction</li>
+           </ul>
+    </html>
+    </panel>
+  </row>
+     <row>
+    <panel>
+      <title>Log2metrics conversion after ingest</title>
+      <html>
+        <p>Use mcollect / meventcollect commands. New data will be written to metrics index after each search performed.</p>
+           <ul>
+             <li>mcollect converts events in to metric data points and inserts it into a metric index</li>
+             <li>meventcollect takes streaming output and inserts events in to a metric index on indexers.</li>
+           </ul>
+    </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Using SAI</title>
+    </panel>
+  </row>
+    
+  
+</dashboard>

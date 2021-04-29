@@ -1,0 +1,73 @@
+<dashboard stylesheet="s4c_dashboards.css">
+  <row>
+    <panel>
+      <title>Fast Mode</title>
+      <html>
+      <table width="100%">
+        <tr>
+          <td width="50%">
+            <p>
+                <strong>Fast mode</strong> speeds up searches by limiting the types of data returned by the search.</p>
+                <p>Click here to perform search: <a href="search?display.page.search.mode=fast&amp;q=search index%3D_internal" target="_blank">Search</a>
+              </p>
+          </td>
+          <td>
+             <p>
+                <img src="/static/app/splunk4champions/images/lab1_task2_fast.png"/>
+              </p>
+          </td>
+        </tr>
+      </table>
+    </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Smart Mode</title>
+      <html>
+      <table width="100%">
+        <tr>
+          <td width="50%">
+            <p>
+                <strong>Smart mode</strong>, the default setting, toggles search behavior based on whether your search contains transforming commands. For transforming searches, it behaves like Fast mode. For searches without transforming commands, it behaves like Verbose mode.</p>
+            
+              <p>Click here to perform search: <a href="search?display.page.search.mode=smart&amp;q=search index%3D_internal" target="_blank">Search</a>
+              </p>
+              
+          </td>
+          <td>
+                  <p>
+                <img src="/static/app/splunk4champions/images/lab1_task2_smart.png"/>
+              </p>
+          
+          </td>
+          </tr>
+      </table>
+    </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Verbose Mode</title>
+      <html>
+      <table width="100%">
+        <tr>
+          <td width="50%">
+            <p>
+                <strong>Verbose mode</strong> returns as much event information as possible, at the expense of slower search performance</p>
+                <p>Click here to perform search: <a href="search?display.page.search.mode=verbose&amp;q=search index%3D_internal" target="_blank">Search</a>
+              </p>
+          </td>
+          <td>
+                    
+                    <p>
+                <img src="/static/app/splunk4champions/images/lab1_task2_verbose.png"/>
+              </p>
+          
+          </td>
+        </tr>
+      </table>
+    </html>
+    </panel>
+  </row>
+</dashboard>

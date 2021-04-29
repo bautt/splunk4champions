@@ -1,0 +1,53 @@
+<dashboard stylesheet="s4c_dashboards.css">
+  <search id="Base_Search">
+    <query>(index="weather" sourcetype=s4c_weather name="Frankfurt am Main") OR (index="stocks" sourcetype="s4c_quotes")</query>
+    <earliest>-1y@d</earliest>
+  </search>
+  <row>
+    <panel>
+      <title>Task 1.1</title>
+      <html>
+      <table width="100%">
+         <tr>
+          <td width="80%">
+            <p>
+                <strong>Why a basesearch?</strong>
+              </p>
+                 <p>
+                <i>Use the Basesearch to save search time if you have multiple charts that rely on same data!</i>
+              </p>
+                <p>
+                <br/>Check our searches from the lab before, we can use the "common part" (and even the evals) into a basesearch and save query-time.</p>
+                <p>
+                <img src="/static/app/splunk4champions/images/lab5_task1_basesearch.png"/>
+              </p>
+          </td>
+        </tr>
+      </table>
+    </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Task 1.1</title>
+      <html>
+      <table width="100%">
+         <tr>
+          <td width="80%">
+            <p>Create a Dashboard with all three searches from Lab 4. Add the base-search to the start of your dashboard, reference in the searches later by Id.</p>
+                <img src="/static/app/splunk4champions/images/lab5_task1_basesearch_1.png"/>
+              
+          </td>
+        </tr>
+        <tr>
+          <td width="80%">
+            <p>Add a child-search to your dashboard, reference the base-search Id</p>
+                <img src="/static/app/splunk4champions/images/lab5_task1_basesearch_2.png"/>
+              
+          </td>
+        </tr>
+      </table>
+    </html>
+    </panel>
+  </row>
+</dashboard>

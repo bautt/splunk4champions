@@ -1,0 +1,37 @@
+[
+    {
+        "id" : "lab1_task1",
+        "title" : "Set your preferences",
+        "lab": ["lab1"],
+        "references":[
+            {"title":"Using The Search Assistant","link":"https://docs.splunk.com/Documentation/Splunk/latest/Search/Usingthesearchassistant"},
+            {"title":"Video: Using The Search Assistant","link":"https://www.splunk.com/view/SP-CAAAE3A"}
+        ]
+
+    },
+    {
+        "id" : "lab1_task2",
+        "title" : "Search Mode",
+        "lab": ["lab1"]
+        
+
+    },
+    {
+        "id" : "lab1_task3",
+        "title" : "Reformat search",
+        "lab": ["lab1"],
+        "references":[
+            {"title":"Searchbar Shortcuts","link":"https://docs.splunk.com/Documentation/Splunk/latest/Search/Parsingsearches#Search_bar_shortcuts"}
+        ]
+    },
+    {
+        "id" : "lab1_task4",
+        "title" : "Language settings",
+        "lab": ["lab1"],
+        "references":[
+            {"title":"User language and locale","link":"https://docs.splunk.com/Documentation/Splunk/latest/Admin/Userlanguageandlocale"}
+        ]
+    }
+    
+
+]

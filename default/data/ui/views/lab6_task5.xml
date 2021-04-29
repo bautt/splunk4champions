@@ -1,0 +1,35 @@
+<dashboard stylesheet="s4c_dashboards.css">
+  <search>
+    <query>index="_audit"</query>
+    <preview>
+      <eval token="timezone">strftime(time(), "%z")</eval>
+    </preview>
+  </search>
+  <row>
+    <panel>
+      <title>Task 2.3</title>
+      <html>
+      <table width="100%">
+         <tr>
+          <td width="80%">
+                 <p>
+                <i>Set a Timezone-Token</i>
+              </p>
+          </td>
+        </tr>
+      </table>
+    </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <html> <p>
+                <img src="/static/app/splunk4champions/images/lab5_task3_example.png"/>
+              </p>
+      </html>
+      <html>
+        <p>Your timezone: $timezone$</p>
+      </html>
+    </panel>
+  </row>
+</dashboard>

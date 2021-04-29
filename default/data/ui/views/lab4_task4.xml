@@ -1,0 +1,189 @@
+<dashboard script="pageffects.js" stylesheet="s4c_dashboards.css">
+  <row>
+    <panel>
+      <html>
+        <h3>Approach I - Close &amp; Temperature</h3>
+        <p>Create a chart displaying the average temperature per day and the daily closing price since the beginning of the Year.</p>
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <html>
+        <h3>Approach I - Close &amp; Temperature</h3>
+        <p>Create a chart displaying the average temperature per day and the daily closing price since the beginning of the Year.</p>
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <html>
+        <code>(index="s4c_weather" sourcetype=s4c_weather name="Frankfurt am Main") OR (index="s4c_stocks" sourcetype="s4c_quotes") <br/>|  timechart span=1d avg(Close) as close, avg(main.temp) as temperature</code>
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Solution I - Close &amp; Temperature</title>
+      <chart>
+        <search>
+          <query>(index="s4c_weather" sourcetype=s4c_weather name="Frankfurt am Main") OR (index="s4c_stocks" sourcetype="s4c_quotes") |  timechart span=1d avg(Close) as close, avg(main.temp) as temperature</query>
+          <earliest>@y</earliest>
+          <latest>now</latest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.rotation">0</option>
+        <option name="charting.axisTitleX.visibility">visible</option>
+        <option name="charting.axisTitleY.visibility">visible</option>
+        <option name="charting.axisTitleY2.visibility">visible</option>
+        <option name="charting.axisX.abbreviation">none</option>
+        <option name="charting.axisX.scale">linear</option>
+        <option name="charting.axisY.abbreviation">none</option>
+        <option name="charting.axisY.scale">linear</option>
+        <option name="charting.axisY2.abbreviation">none</option>
+        <option name="charting.axisY2.enabled">1</option>
+        <option name="charting.axisY2.scale">inherit</option>
+        <option name="charting.chart">column</option>
+        <option name="charting.chart.bubbleMaximumSize">50</option>
+        <option name="charting.chart.bubbleMinimumSize">10</option>
+        <option name="charting.chart.bubbleSizeBy">area</option>
+        <option name="charting.chart.nullValueMode">gaps</option>
+        <option name="charting.chart.overlayFields">close</option>
+        <option name="charting.chart.showDataLabels">none</option>
+        <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
+        <option name="charting.chart.stackMode">default</option>
+        <option name="charting.chart.style">shiny</option>
+        <option name="charting.drilldown">none</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="charting.layout.splitSeries.allowIndependentYRanges">0</option>
+        <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
+        <option name="charting.legend.mode">standard</option>
+        <option name="charting.legend.placement">right</option>
+        <option name="charting.lineWidth">2</option>
+        <option name="trellis.enabled">0</option>
+        <option name="trellis.scales.shared">1</option>
+        <option name="trellis.size">medium</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <html>
+        <h3>Approach II - Does a rise in temperature mean an increase in stock prices?</h3>
+        <p>Create a barchart displaying binary values for temperature and price increase/decrease over time.</p>
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <html>
+     <code>(index="s4c_weather" sourcetype=s4c_weather name="Frankfurt am Main") OR (index="s4c_stocks" sourcetype="s4c_quotes") <br/>| eval price_increase = if(Close&gt;Open,1,-1) <br/>| timechart span=1d last(main.temp) as starttemp,first(main.temp) as lasttemp,first(price_increase) as priceincrease | eval tempincrease = if(starttemp &lt; lasttemp,1,-1) <br/>| timechart span=1d first(priceincrease) as priceincrease, first(tempincrease) as tempincrease</code>
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Solution II - Does a rise in temperature mean an increase in stock prices?</title>
+      <chart>
+        <search>
+          <query>(index="s4c_weather" sourcetype=s4c_weather name="Frankfurt am Main") OR (index="s4c_stocks" sourcetype="s4c_quotes") | eval price_increase = if(Close&gt;Open,1,-1) | timechart span=1d last(main.temp) as starttemp,first(main.temp) as lasttemp,first(price_increase) as priceincrease | eval tempincrease = if(starttemp &lt; lasttemp,1,-1) | timechart span=1d first(priceincrease) as priceincrease, first(tempincrease) as tempincrease</query>
+          <earliest>@y</earliest>
+          <latest>now</latest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.rotation">0</option>
+        <option name="charting.axisTitleX.visibility">visible</option>
+        <option name="charting.axisTitleY.visibility">visible</option>
+        <option name="charting.axisTitleY2.visibility">visible</option>
+        <option name="charting.axisX.abbreviation">none</option>
+        <option name="charting.axisX.scale">linear</option>
+        <option name="charting.axisY.abbreviation">none</option>
+        <option name="charting.axisY.scale">linear</option>
+        <option name="charting.axisY2.abbreviation">none</option>
+        <option name="charting.axisY2.enabled">0</option>
+        <option name="charting.axisY2.scale">inherit</option>
+        <option name="charting.chart">column</option>
+        <option name="charting.chart.bubbleMaximumSize">50</option>
+        <option name="charting.chart.bubbleMinimumSize">10</option>
+        <option name="charting.chart.bubbleSizeBy">area</option>
+        <option name="charting.chart.nullValueMode">gaps</option>
+        <option name="charting.chart.showDataLabels">none</option>
+        <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
+        <option name="charting.chart.stackMode">default</option>
+        <option name="charting.chart.style">shiny</option>
+        <option name="charting.drilldown">none</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="charting.layout.splitSeries.allowIndependentYRanges">0</option>
+        <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
+        <option name="charting.legend.mode">standard</option>
+        <option name="charting.legend.placement">right</option>
+        <option name="charting.lineWidth">2</option>
+        <option name="trellis.enabled">0</option>
+        <option name="trellis.scales.shared">1</option>
+        <option name="trellis.size">medium</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <html>
+        <h3>Approach III - the better the weather, the higher the volume?</h3>
+        <p>Create a scatter-chart displaying the dependency between the "weather" and the trading volume.</p>
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <html>
+     <code>(index="s4c_weather" sourcetype=s4c_weather name="Frankfurt am Main") OR (index="s4c_stocks" sourcetype="s4c_quotes") <br/>| rename "weather{}.main" as weathermain <br/>| eval weather=case(weathermain=="Clouds",80,weathermain=="Clear",100,weathermain=="Mist",60,weathermain=="Drizzle",40,weathermain=="Fog",65,weathermain=="Thunderstorm",5,weathermain=="Snow",25,weathermain=="Squall",35,weathermain=="Haze",7) <br/>| timechart span=1d avg(weather),avg(Volume)</code>
+      </html>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Solution III - the better the weather, the higher the volume?</title>
+      <chart>
+        <search>
+          <query>(index="s4c_weather" sourcetype=s4c_weather name="Frankfurt am Main") OR (index="s4c_stocks" sourcetype="s4c_quotes")| rename "weather{}.main" as weathermain | eval weather=case(weathermain=="Clouds",80,weathermain=="Clear",100,weathermain=="Mist",60,weathermain=="Drizzle",40,weathermain=="Fog",65,weathermain=="Thunderstorm",5,weathermain=="Snow",25,weathermain=="Squall",35,weathermain=="Haze",7) | timechart span=1d avg(weather),avg(Volume)</query>
+          <earliest>@y</earliest>
+          <latest>now</latest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.rotation">0</option>
+        <option name="charting.axisTitleX.visibility">visible</option>
+        <option name="charting.axisTitleY.visibility">visible</option>
+        <option name="charting.axisTitleY2.visibility">visible</option>
+        <option name="charting.axisX.abbreviation">none</option>
+        <option name="charting.axisX.scale">linear</option>
+        <option name="charting.axisY.abbreviation">none</option>
+        <option name="charting.axisY.scale">linear</option>
+        <option name="charting.axisY2.abbreviation">none</option>
+        <option name="charting.axisY2.enabled">0</option>
+        <option name="charting.axisY2.scale">inherit</option>
+        <option name="charting.chart">scatter</option>
+        <option name="charting.chart.bubbleMaximumSize">50</option>
+        <option name="charting.chart.bubbleMinimumSize">10</option>
+        <option name="charting.chart.bubbleSizeBy">area</option>
+        <option name="charting.chart.nullValueMode">gaps</option>
+        <option name="charting.chart.showDataLabels">none</option>
+        <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
+        <option name="charting.chart.stackMode">default</option>
+        <option name="charting.chart.style">shiny</option>
+        <option name="charting.drilldown">none</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="charting.layout.splitSeries.allowIndependentYRanges">0</option>
+        <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
+        <option name="charting.legend.mode">standard</option>
+        <option name="charting.legend.placement">right</option>
+        <option name="charting.lineWidth">2</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="trellis.enabled">0</option>
+        <option name="trellis.scales.shared">1</option>
+        <option name="trellis.size">medium</option>
+      </chart>
+    </panel>
+  </row>
+</dashboard>

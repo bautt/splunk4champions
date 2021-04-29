@@ -1,0 +1,142 @@
+[views/lab_engine]
+version = 8.0.5
+modtime = 1602232356.296581000
+
+[views/lab1_task1]
+version = 8.0.5
+modtime = 1597947669.768040200
+
+[views/labX_taskX]
+version = 8.0.5
+modtime = 1597867013.376788100
+
+[nav/default]
+version = 8.0.5
+modtime = 1597953419.909954500
+
+[views/lab1_task2]
+version = 8.0.5
+modtime = 1597871776.266111100
+
+[views/lab1_task3]
+version = 8.0.5
+modtime = 1597947701.328724700
+
+[views/lab2_task1]
+version = 8.0.5
+modtime = 1597877714.871305500
+
+[views/lab2_task1a]
+owner = admin
+version = 8.0.5
+modtime = 1597875977.221913600
+
+[views/lab2_task1b]
+owner = admin
+version = 8.0.5
+modtime = 1597922398.286368100
+
+[views/lab2_task1c]
+owner = admin
+version = 8.0.5
+modtime = 1597922612.951352500
+
+[views/lab3_task4]
+access = read : [ * ], write : [ admin, can_delete, power ]
+export = none
+owner = admin
+version = 8.0.5
+modtime = 1597952411.255211700
+
+[views/lab3_task1]
+version = 8.0.5
+modtime = 1597878025.000630500
+
+[views/lab3_task2]
+version = 8.0.5
+modtime = 1597949178.051461100
+
+[views/lab3_task3]
+version = 8.0.5
+modtime = 1602232622.216356800
+
+[views/lab4_task1]
+version = 8.0.5
+modtime = 1597950775.722484800
+
+[views/lab4_task2]
+version = 8.0.5
+modtime = 1597950760.590529600
+
+[views/lab4_task4]
+version = 8.0.5
+modtime = 1597950746.812057000
+
+[views/lab5_task1]
+version = 8.0.5
+modtime = 1597881560.184946200
+
+[views/lab5_task2]
+version = 8.0.5
+modtime = 1597948435.216229900
+
+[views/lab5_task3]
+version = 8.0.5
+modtime = 1597924740.537268700
+
+[splunk4champions/install]
+version = 8.0.5
+modtime = 1599645379.316365900
+
+[app/install/is_configured]
+version = 8.0.5
+modtime = 1599645379.350365100
+
+[views/lab5_task4]
+owner = admin
+version = 8.0.5
+modtime = 1597924893.533520000
+
+[views/lab5_task5]
+owner = admin
+version = 8.0.5
+modtime = 1597924933.486328400
+
+[views/lab1_task4]
+owner = admin
+version = 8.0.5
+modtime = 1597926371.665668300
+
+[views/lab3_task5]
+owner = admin
+version = 8.0.5
+modtime = 1597940993.037744500
+
+[views/lab2_task4]
+owner = admin
+version = 8.0.5
+modtime = 1597950247.129133600
+
+[views/lab6_task1]
+owner = admin
+version = 8.0.5
+modtime = 1597952951.847505100
+
+[views/lab6_task2]
+owner = admin
+version = 8.0.5
+modtime = 1597953547.885920600
+
+[views/lab6_task3]
+owner = admin
+version = 8.0.5
+modtime = 1597953729.226702200
+
+[views/lab6_task4]
+owner = admin
+version = 8.0.5
+modtime = 1597955608.951660500
+
+[app/install/install_source_checksum]
+version = 8.1.3
+modtime = 1619686527.876281000
