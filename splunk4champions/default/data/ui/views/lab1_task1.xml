@@ -5,8 +5,8 @@
       <html>
       <table width="100%">
         <tr>
-          <td width="50%">
-            <p>Click here for more information: <a href="https://www.splunk.com/view/SP-CAAAE3A" target="_blank">https://www.splunk.com/view/SP-CAAAE3A</a>
+          <td width="10%">
+            <p>
               </p>
 
           </td>
@@ -48,7 +48,7 @@
   </row>
   <row>
     <panel>
-      <title>Line number</title>
+      <title>Line numbers</title>
       <html>
       <table width="100%">
         <tr>
