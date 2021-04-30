@@ -7,7 +7,8 @@
         <tr>
           <td width="50%">
             <p>
-                <strong>Fast mode</strong> speeds up searches by limiting the types of data returned by the search.</p>
+                <strong>Fast mode</strong> uses the least amount of system resources.
+                It is great to use Fast Mode when merely checking if data is present or not (in combination with | tstats) or after a search is already built.</p>
                 <p>Click here to perform search: <a href="search?display.page.search.mode=fast&amp;q=search index%3D_internal" target="_blank">Search</a>
               </p>
           </td>
@@ -29,17 +30,20 @@
         <tr>
           <td width="50%">
             <p>
-                <strong>Smart mode</strong>, the default setting, toggles search behavior based on whether your search contains transforming commands. For transforming searches, it behaves like Fast mode. For searches without transforming commands, it behaves like Verbose mode.</p>
-            
+                <strong>Smart mode</strong> is best when exploring data, as it will only pull back raw events if there are no transforming commands in the search,
+                and will display any field extractions in the events.
+                If there are transforming commands like stats, chart, or timechart in the search, it will only return the aggregated/transformed events.
+                This saves on system resources and results in faster searches.</p>
+
               <p>Click here to perform search: <a href="search?display.page.search.mode=smart&amp;q=search index%3D_internal" target="_blank">Search</a>
               </p>
-              
+
           </td>
           <td>
                   <p>
                 <img src="/static/app/splunk4champions/images/lab1_task2_smart.png"/>
               </p>
-          
+
           </td>
           </tr>
       </table>
@@ -54,16 +58,16 @@
         <tr>
           <td width="50%">
             <p>
-                <strong>Verbose mode</strong> returns as much event information as possible, at the expense of slower search performance</p>
+                <strong>Verbose mode</strong> returns as much information as possible from the data, including all events and field information.</p>
                 <p>Click here to perform search: <a href="search?display.page.search.mode=verbose&amp;q=search index%3D_internal" target="_blank">Search</a>
               </p>
           </td>
           <td>
-                    
+
                     <p>
                 <img src="/static/app/splunk4champions/images/lab1_task2_verbose.png"/>
               </p>
-          
+
           </td>
         </tr>
       </table>
