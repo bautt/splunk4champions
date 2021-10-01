@@ -3,7 +3,7 @@
     <panel>
       <title>Using mcatalog command</title>
       <html>
-         <code>| mcatalog values(metric_name) WHERE index=* | mcatalog values(metric_name) WHERE metric_name=”disk*” AND index=*</code>
+         <code>| mcatalog values(metric_name)  WHERE  index=_*</code>
       </html>
     </panel>
   </row>
@@ -11,7 +11,7 @@
     <panel>
       <title>Using mstats command</title>
       <html>
-         <code>| mstats max(CO2) prestats=t  WHERE index=raspi span=10m | timechart span=10m max(CO2) AS PPM</code>
+         <code>| mstats avg("spl.mlog.thruput.thruput.average_kbps") prestats=true WHERE "index"="_metrics" span=10s| timechart avg("spl.mlog.thruput.thruput.average_kbps") AS Avg span=10s</code>
       </html>
     </panel>
   </row>
