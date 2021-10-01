@@ -310,4 +310,28 @@
     </html>
     </panel>
   </row>
+  <row>
+    <panel>
+      <html>
+      <table width="100%">
+       <tr>
+        <td width="20%">
+         <p>Prefer <code>tstats</code> over <code>stats</code></p>
+        </td>
+        <td width="40%">
+          <ul>
+          <li>If you run statistics on large data and can rely on indexed fields - try to utilize tstats command - your perfomarnce will be increased significantly.</li>
+          </ul>
+        </td>
+        <td width="40%">
+          <ul>
+          <li>i.e.: <code>|tstats count WHERE index=main </code><br/>vs.<br/><code> index=main | stats count</code></li>
+          </ul>
+        </td>
+      </tr>
+      </table>
+    </html>
+    </panel>
+  </row>
 </dashboard>
+
