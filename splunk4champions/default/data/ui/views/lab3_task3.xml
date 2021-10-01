@@ -105,9 +105,9 @@
             </tr>
            <tr>
             <td style="text-align: center;">
-                <code>index=s4c_weather earliest=-1y | stats count by name/code>
+                <code>index=s4c_weather earliest="01/01/2020:00:00:00" latest="12/31/2020:24:00:00" | stats count by name </code>
                 <h3>VS:</h3>
-                <code>|tstats count  WHERE earliest=-1y index="s4c_weather"   by name</code>
+                <code>|tstats count  WHERE earliest="01/01/2020:00:00:00" latest="12/31/2020:24:00:00" index="s4c_weather"   by name</code>
             </td>
           </tr>
         </table>
