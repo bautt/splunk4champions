@@ -1,5 +1,5 @@
 # splunk4champions
-## _Splunk SE Workshop for advanced users_
+## _Splunk (Pre-sales) Workshop for advanced users_
 ![](https://github.com/bautt/splunk4champions/blob/master/splunk4champions/static/appIcon_2x.png)
 
  Splunk4Champions is  a session for more experienced Splunk users (champions) who are still willing to learn some new tricks and get deeper understanding of how Splunk search works.
