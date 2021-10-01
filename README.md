@@ -22,7 +22,7 @@ Dashboard hints
 Sustainable and energy saving usage of Splunk
 New insights and inspiration
 
-###Design Goals: 
+### Design Goals: 
 Zero-Powerpoint: all information needed is included in the app
 
 *** This app will create 3 new indexes (s4c_access, s4c_stocks, s4c_weather) and  upload 1.8 GB of example data. Do not install on production systems. ***
