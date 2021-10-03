@@ -11,9 +11,23 @@
     </html>
     </panel>
   </row>
+  
+<row>
+    <panel>
+      <title>Architecture</title>
+      <html>
+       <p>
+      <img src="/static/app/splunk4champions/images/lab3_task0_picture5.png" width="600"/>
+      </p>
+      <p><a href="https://www.splunk.com/pdfs/technical-briefs/splunk-validated-architectures.pdf" target="_blank" >Splunk validated architectures</a>
+      </p>
+    </html>
+    </panel>
+  </row>
   <row>
     <panel>
        <html>
+       
        
       <p>Note: Indexer clusters are groups of Splunk Enterprise indexers configured to replicate each others' data, so that the system keeps multiple copies of all data. This process is known as index replication. By maintaining multiple, identical copies of Splunk Enterprise data, clusters prevent data loss while promoting data availability for searching.</p>
     </html>

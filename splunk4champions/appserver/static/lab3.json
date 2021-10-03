@@ -1,7 +1,7 @@
 [
     {
         "id" : "lab3_task4",
-        "title" : "Whats is a Bucket?",
+        "title" : "Whats in a Bucket?",
         "lab": ["lab1"],
         "references":[
             {"title":"TSIDX in Splexicon","link":"https://docs.splunk.com/Splexicon:Tsidxfile"},
