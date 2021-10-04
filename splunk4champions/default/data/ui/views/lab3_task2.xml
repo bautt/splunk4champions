@@ -303,7 +303,7 @@
         <td width="40%">
           <ul>
           <li>As much as possible, add all filtering criteria before the first | <br/>i.e.: <code>&gt;index=main foo bar| </code><br/>vs. <br/><code>&gt;index=main foo | search bar</code></li>
-          </ul>
+        </ul>
         </td>
       </tr>
       </table>
@@ -320,8 +320,12 @@
         </td>
         <td width="40%">
           <ul>
-          <li>If you run statistics on large data and can rely on indexed fields - try to utilize tstats command - your perfomarnce will be increased significantly.</li>
-          </ul>
+          <li>If you run statistics on large data and can rely on indexed fields - try to utilize tstats command - your performance will be increased significantly.</li>
+          <li>You can use <b>walklex</b> command to find the indexed fields (type=fieldvalue)</li>
+          <li>For type=term tstats can be used with PREFIX: tstats count by PREFIX(host=)</li>
+          <li> See <a href="https://conf.splunk.com/watch/conf-online.html?search=PLA1089C#/">Richard Morgans .conf talk on tstats</a></li> 
+        </ul>
+
         </td>
         <td width="40%">
           <ul>
