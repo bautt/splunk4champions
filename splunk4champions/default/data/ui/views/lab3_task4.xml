@@ -29,7 +29,11 @@
        <html>
        
        
-      <p>Note: Indexer clusters are groups of Splunk Enterprise indexers configured to replicate each others' data, so that the system keeps multiple copies of all data. This process is known as index replication. By maintaining multiple, identical copies of Splunk Enterprise data, clusters prevent data loss while promoting data availability for searching.</p>
+      <p>Note: Indexer clusters are groups of Splunk Enterprise indexers configured to replicate each others' data, so that the system keeps multiple copies of all data. 
+      This process is known as index replication. Indexers also participate in the search process and help to scale searches. 
+      By maintaining multiple, identical copies of Splunk Enterprise data, clusters prevent data loss while promoting data availability for searching.</p>
+      <p> Commands where the searh order does not matter are called <b>distributable streaming </b> commands. Distributable streaming commands run on Indexers.</p>
+      <p><a href="https://www.splunk.com/pdfs/technical-briefs/splunk-validated-architectures.pdf" target="_blank" >See complete docs on the types of commands</a></p>
     </html>
     </panel>
   </row>
