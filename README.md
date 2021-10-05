@@ -10,13 +10,13 @@ Advanced Splunk users
 Splunk admins
 
 ### Content:
-Options and GUI Settings
-Using Job Inspector
-What is a bucket, bloom filter, index and retention?
-Search performance: good and bad searches
-Data correlation with examples
-Converting log data to metrics
-Dashboard hints 
+- Options and GUI Settings
+- Using Job Inspector
+- What is a bucket, bloom filter, index and retention?
+- Search performance: good and bad searches
+- Data correlation with examples
+- Converting log data to metrics
+- Dashboard hints 
 
 ### Benefit:
 Sustainable and energy saving usage of Splunk
