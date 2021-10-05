@@ -1,7 +1,7 @@
 [
     {
         "id" : "lab3_task4",
-        "title" : "Whats in a Bucket?",
+        "title" : "How is data stored and searched?",
         "lab": ["lab1"],
         "references":[
             {"title":"TSIDX in Splexicon","link":"https://docs.splunk.com/Splexicon:Tsidxfile"},
