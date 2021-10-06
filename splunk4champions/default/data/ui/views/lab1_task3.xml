@@ -52,4 +52,26 @@
     </html>
     </panel>
   </row>
+  <row>
+    <panel>
+      <title>Use Comments (revolutianary new feature in 8.1+ )</title>
+      <html>
+      <table width="100%">
+        <tr>
+          <td width="80%">
+            <p>Use "´´´" (3x backquote / grave / left single quote) to start and close a comment in the search </p>
+            <p>
+                <img src="/static/app/splunk4champions/images/lab1_task3_howto4.png"/>
+              </p>
+              <br/>
+          </td>
+          <td>
+             <p>Click here to perform a search with comments: <a href="search?display.page.search.mode=fast&amp;q=search |index=_internal  | stats count by host  ```Found this search in answers, no idea what it is doing here``` &amp;earliest=0&amp;latest=" target="_blank">Search</a>
+              </p>
+          </td>
+        </tr>
+      </table>
+    </html>
+    </panel>
+  </row>
 </dashboard>
