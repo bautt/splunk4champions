@@ -10,13 +10,13 @@ Advanced Splunk users
 Splunk admins
 
 ### Content:
-Options and GUI Settings
-Using Job Inspector
-What is a bucket, bloom filter, index and retention?
-Search performance: good and bad searches
-Data correlation with examples
-Converting log data to metrics
-Dashboard hints 
+- Options and GUI Settings
+- Using Job Inspector
+- What is a bucket, bloom filter, index and retention?
+- Search performance: good and bad searches
+- Data correlation with examples
+- Converting log data to metrics
+- Dashboard hints 
 
 ### Benefit:
 Sustainable and energy saving usage of Splunk
@@ -25,4 +25,12 @@ New insights and inspiration
 ### Design Goals: 
 Zero-Powerpoint: all information needed is included in the app
 
-*** This app will create 3 new indexes (s4c_access, s4c_stocks, s4c_weather) and  upload 1.8 GB of example data. Do not install on production systems. ***
+### Download and installation:
+If you download a release https://github.com/bautt/splunk4champions/releases/ it will unpack as "splunk4champions". Downloading from this page will need to be renamed from splunk4champions-master to splunk4champions. Move the app in to $SPLUNKHOME/etc/apps and restart. :rocket:
+
+*This app will create 3 new indexes (s4c_access, s4c_stocks, s4c_weather) and  upload 1.8 GB of example data.*
+
+**Do not install on production systems.**
+
+
+###### Authors: Andreas Greeske (Chief developer) / Tomas Baublys
