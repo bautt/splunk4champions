@@ -34,7 +34,7 @@
       <html>
       <table width="100%">
         <tr>
-          <td width="80%">
+          <td width="60%">
             <p>You want to know whats hiding behind your Macros? Find out with this handy Shortcut! </p>
             <p>
                 <img src="/static/app/splunk4champions/images/lab1_task3_howto3.png"/>
@@ -43,6 +43,7 @@
               <h3>On Mac OSX use Command + Shift + E. </h3>
               <br/>
           </td>
+          <td width="20%"></td>
           <td>
              <p>Click here to perform a search with a macro: <a href="search?display.page.search.mode=fast&amp;q=search `s4c_testmacro`&amp;earliest=0&amp;latest=" target="_blank">Search</a>
               </p>

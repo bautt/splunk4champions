@@ -18,10 +18,12 @@
   <row>
     <panel>
       <input type="text" token="jobsid" placeholder="Enter SearchId">
-        <label>Enter the search id into the box from JobInspector here:</label>
+        <label>Enter the search id here:</label>
       </input>
       <html>
         <p>Click here to open endpoint with jobinspector results: <a href="/manager/search/job_inspector?sid=$jobsid$" target="_blank">/manager/search/job_inspector?sid=$jobsid$</a>
+        </p>
+        <p>Or take a look at the new job overview dashboard: <a href="/app/search/job_details_dashboard?form.sid=$jobsid$" target="_blank">/app/search/job_details_dashboard?form.sid=$jobsid$</a>
         </p>
        </html>
     </panel>
