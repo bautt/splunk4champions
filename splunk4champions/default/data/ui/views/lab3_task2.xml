@@ -178,7 +178,7 @@
         <td width="40%">
           <ul>
           <li>RT Searches put an increased load on search head and indexers</li>
-           <li>The same effect can typically be accomplished with a 1 min. or 5 min. scheduled search</li>
+           <li>The same effect can typically be accomplished with a 1 min. or 5 min. scheduled search or just a quick search with panel refresh in the dashboard.</li>
           </ul>
         </td>
         <td width="40%">
@@ -186,6 +186,11 @@
           <li>Use a scheduled search that occurs more frequently</li>
           <li>Use Indexed-Realtime searches
 (Set by Splunk admin)</li>
+<li> Use panel refresh: 
+<a target="_blank" href="realtime_vs_refresh">/app/splunk4champions/realtime_vs_refresh</a>
+
+
+</li>
           </ul>
         </td>
       </tr>
