@@ -1,4 +1,27 @@
 <dashboard script="pageffects.js" stylesheet="s4c_dashboards.css">
+<row>
+    <panel>
+      <title>Rebus</title>
+      <html>
+      <table width="100%">
+      <tr>
+                <img src="/static/app/splunk4champions/images/rebus.png"/>
+
+            <td colspan="2">
+              <p>
+                <strong>What does that could mean?</strong>
+              </p>
+            </td>
+          </tr>
+         <tr>
+          <td style="text-align: center;">
+
+          </td>
+        </tr>
+      </table>
+    </html>
+    </panel>
+  </row>
   <row>
     <panel>
       <title>Task</title>
