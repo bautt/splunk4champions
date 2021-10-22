@@ -23,7 +23,7 @@
   <row>
     <panel>
       <html>
-      <code>index="s4c_weather" sourcetype=s4c_weather | spath name | search name="Frankfurt am Main" | timechart avg(main.temp) span=4h as temperature</code>
+      <code>index="s4c_weather" sourcetype=s4c_weather Frankfurt | timechart avg(main.temp) span=4h as temperature</code>
       </html>
     </panel>
   </row>
@@ -31,7 +31,7 @@
     <panel>
       <chart>
         <search>
-          <query>index="s4c_weather" sourcetype=s4c_weather | spath name | search name="Frankfurt am Main" | timechart avg(main.temp) span=4h as temperature</query>
+          <query>index="s4c_weather" sourcetype=s4c_weather Frankfurt | timechart avg(main.temp) span=4h as temperature</query>
           <earliest>@y</earliest>
           <latest>now</latest>
           <sampleRatio>1</sampleRatio>
@@ -104,7 +104,7 @@
     <panel>
       <chart>
         <search>
-          <query>index="s4c_weather" sourcetype=s4c_weather | spath name | search name="Frankfurt am Main" | timechart span=4h avg(main.temp) as temperature  | trendline sma20(temperature) as trend</query>
+          <query>index="s4c_weather" sourcetype=s4c_weather Frankfurt | timechart span=4h avg(main.temp) as temperature  | trendline sma20(temperature) as trend</query>
           <earliest>@y</earliest>
           <latest>now</latest>
           <sampleRatio>1</sampleRatio>

@@ -1,0 +1,212 @@
+<form theme="dark">
+  <label>Weather_Metrics</label>
+  <fieldset submitButton="false">
+    <input type="time" searchWhenChanged="true" token="global_time_tok">
+      <label>Time Range</label>
+      <default>
+        <earliest>-7d</earliest>
+        <latest>now</latest>
+      </default>
+    </input>
+    <input type="dropdown">
+      <label>Time Span</label>
+      <choice value="auto">auto</choice>
+      <choice value="5s">5s</choice>
+      <choice value="10s">10s</choice>
+      <choice value="30s">30s</choice>
+      <choice value="1m">1m</choice>
+      <choice value="5m">5m</choice>
+      <choice value="10m">10m</choice>
+      <choice value="30m">30m</choice>
+      <choice value="1h">1h</choice>
+      <default>auto</default>
+      <change>
+        <eval token="timechart_span">if($value$ == "auto", "", "span=".$value$)</eval>
+        <eval token="mstats_span">"span=".$value$</eval>
+      </change>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <chart>
+        <title>weather.Temperature</title>
+        <search>
+          <query>| mstats avg("weather.Temperature") prestats=true WHERE "index"="s4c_mweather" $mstats_span$ BY name
+| timechart avg("weather.Temperature") $timechart_span$ useother=false BY name WHERE max in top20
+| fields - _span*</query>
+          <earliest>$global_time_tok.earliest$</earliest>
+          <latest>$global_time_tok.latest$</latest>
+        </search>
+        <option name="charting.drilldown">none</option>
+        <option name="charting.chart">line</option>
+        <option name="charting.chart.nullValueMode">connect</option>
+        <option name="charting.chart.showDataLabels">none</option>
+        <option name="charting.fieldColors">{"Avg":"#1e93c6","ip-172-31-40-27.us-east-2.compute.internal":"#f2b827","Austin":"#1e93c6","Bonn":"#d6563c","Brussels":"#6a5c9e","Paris":"#f2b827","Sydney":"#ed8440","Berlin":"#f2b827","Frankfurt":"#ed8440","Frankfurt am Main":"#3863a0","Hamburg":"#a2cc3e","London":"#cc5068","Munich":"#73427f","Orlando":"#1e93c6","Prague":"#d6563c","Riga":"#6a5c9e","Rīga":"#31a35f","Stockholm":"#1e93c6","Vienna":"#3863a0","Vilnius":"#a2cc3e","Warsaw":"#cc5068","Zurich":"#73427f","Copenhagen":"#31a35f"}</option>
+        <option name="charting.gridLinesX.showMajorLines">true</option>
+        <option name="charting.axisY.abbreviation">auto</option>
+        <option name="charting.legend.mode">seriesCompare</option>
+        <option name="charting.fieldDashStyles">{"Avg":"solid","ip-172-31-40-27.us-east-2.compute.internal":"solid","Austin":"solid","Bonn":"solid","Brussels":"solid","Paris":"solid","Sydney":"solid","Berlin":"solid","Frankfurt":"solid","Frankfurt am Main":"solid","Hamburg":"solid","London":"solid","Munich":"solid","Orlando":"solid","Prague":"solid","Riga":"solid","Rīga":"solid","Stockholm":"solid","Vienna":"solid","Vilnius":"solid","Warsaw":"solid","Zurich":"solid","Copenhagen":"solid"}</option>
+        <option name="displayview">analytics_workspace</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <chart>
+        <title>weather.Humidity</title>
+        <search>
+          <query>| mstats avg("weather.Humidity") prestats=true WHERE "index"="s4c_mweather" $mstats_span$ BY name
+| timechart avg("weather.Humidity") $timechart_span$ useother=false BY name WHERE max in top5
+| fields - _span*</query>
+          <earliest>$global_time_tok.earliest$</earliest>
+          <latest>$global_time_tok.latest$</latest>
+        </search>
+        <option name="charting.drilldown">none</option>
+        <option name="charting.chart">line</option>
+        <option name="charting.chart.nullValueMode">connect</option>
+        <option name="charting.chart.showDataLabels">none</option>
+        <option name="charting.fieldColors">{"Avg":"#1e93c6","Copenhagen":"#1e93c6","Frankfurt":"#f2b827","Riga":"#d6563c","Stockholm":"#6a5c9e","Vilnius":"#31a35f","Frankfurt am Main":"#ed8440","Rīga":"#3863a0","Zurich":"#a2cc3e"}</option>
+        <option name="charting.gridLinesX.showMajorLines">true</option>
+        <option name="charting.axisY.abbreviation">auto</option>
+        <option name="charting.legend.mode">seriesCompare</option>
+        <option name="charting.fieldDashStyles">{"Avg":"solid","Copenhagen":"solid","Frankfurt":"solid","Riga":"solid","Stockholm":"solid","Vilnius":"solid","Frankfurt am Main":"solid","Rīga":"solid","Zurich":"solid"}</option>
+        <option name="displayview">analytics_workspace</option>
+      </chart>
+    </panel>
+    <panel>
+      <chart>
+        <title>weather.Pressure</title>
+        <search>
+          <query>| mstats avg("weather.Pressure") prestats=true WHERE "index"="s4c_mweather" $mstats_span$ BY name
+| timechart avg("weather.Pressure") $timechart_span$ useother=false BY name WHERE max in top20
+| fields - _span*</query>
+          <earliest>$global_time_tok.earliest$</earliest>
+          <latest>$global_time_tok.latest$</latest>
+        </search>
+        <option name="charting.drilldown">none</option>
+        <option name="charting.chart">line</option>
+        <option name="charting.chart.nullValueMode">connect</option>
+        <option name="charting.chart.showDataLabels">none</option>
+        <option name="charting.fieldColors">{"Avg":"#1e93c6","Austin":"#1e93c6","Berlin":"#f2b827","Bonn":"#d6563c","Brussels":"#6a5c9e","Copenhagen":"#31a35f","Frankfurt":"#ed8440","Frankfurt am Main":"#3863a0","Hamburg":"#a2cc3e","London":"#cc5068","Munich":"#73427f","Orlando":"#1e93c6","Paris":"#f2b827","Prague":"#d6563c","Rīga":"#6a5c9e","Stockholm":"#31a35f","Sydney":"#ed8440","Vienna":"#3863a0","Vilnius":"#a2cc3e","Warsaw":"#cc5068","Zurich":"#73427f"}</option>
+        <option name="charting.gridLinesX.showMajorLines">true</option>
+        <option name="charting.axisY.abbreviation">auto</option>
+        <option name="charting.legend.mode">seriesCompare</option>
+        <option name="charting.fieldDashStyles">{"Avg":"solid","Austin":"solid","Berlin":"solid","Bonn":"solid","Brussels":"solid","Copenhagen":"solid","Frankfurt":"solid","Frankfurt am Main":"solid","Hamburg":"solid","London":"solid","Munich":"solid","Orlando":"solid","Paris":"solid","Prague":"solid","Rīga":"solid","Stockholm":"solid","Sydney":"solid","Vienna":"solid","Vilnius":"solid","Warsaw":"solid","Zurich":"solid"}</option>
+        <option name="displayview">analytics_workspace</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <chart>
+        <title>weather.Visibility</title>
+        <search>
+          <query>| mstats avg("weather.Visibility") prestats=true WHERE "index"="s4c_mweather" $mstats_span$ BY name
+| timechart avg("weather.Visibility") $timechart_span$ useother=false BY name WHERE max in top20
+| fields - _span*</query>
+          <earliest>$global_time_tok.earliest$</earliest>
+          <latest>$global_time_tok.latest$</latest>
+        </search>
+        <option name="charting.drilldown">none</option>
+        <option name="charting.chart">line</option>
+        <option name="charting.chart.nullValueMode">connect</option>
+        <option name="charting.chart.showDataLabels">none</option>
+        <option name="charting.fieldColors">{"Avg":"#1e93c6","Austin":"#1e93c6","Berlin":"#f2b827","Bonn":"#d6563c","Brussels":"#6a5c9e","Copenhagen":"#31a35f","Frankfurt":"#ed8440","Frankfurt am Main":"#3863a0","Hamburg":"#a2cc3e","Landkreis Neustadt an der Aisch-Bad Windsheim":"#cc5068","London":"#73427f","Munich":"#1e93c6","Orlando":"#f2b827","Paris":"#d6563c","Prague":"#6a5c9e","Stockholm":"#31a35f","Sydney":"#ed8440","Vienna":"#3863a0","Vilnius":"#a2cc3e","Warsaw":"#cc5068","Zurich":"#73427f","Rīga":"#1e93c6"}</option>
+        <option name="charting.gridLinesX.showMajorLines">true</option>
+        <option name="charting.axisY.abbreviation">auto</option>
+        <option name="charting.legend.mode">seriesCompare</option>
+        <option name="charting.fieldDashStyles">{"Avg":"solid","Austin":"solid","Berlin":"solid","Bonn":"solid","Brussels":"solid","Copenhagen":"solid","Frankfurt":"solid","Frankfurt am Main":"solid","Hamburg":"solid","Landkreis Neustadt an der Aisch-Bad Windsheim":"solid","London":"solid","Munich":"solid","Orlando":"solid","Paris":"solid","Prague":"solid","Stockholm":"solid","Sydney":"solid","Vienna":"solid","Vilnius":"solid","Warsaw":"solid","Zurich":"solid","Rīga":"solid"}</option>
+        <option name="displayview">analytics_workspace</option>
+      </chart>
+    </panel>
+    <panel>
+      <chart>
+        <title>weather.Windspeed</title>
+        <search>
+          <query>| mstats avg("weather.Windspeed") prestats=true WHERE "index"="s4c_mweather" $mstats_span$ BY name
+| timechart avg("weather.Windspeed") $timechart_span$ useother=false BY name WHERE max in top20
+| fields - _span*</query>
+          <earliest>$global_time_tok.earliest$</earliest>
+          <latest>$global_time_tok.latest$</latest>
+        </search>
+        <option name="charting.drilldown">none</option>
+        <option name="charting.chart">line</option>
+        <option name="charting.chart.nullValueMode">connect</option>
+        <option name="charting.chart.showDataLabels">none</option>
+        <option name="charting.fieldColors">{"Avg":"#1e93c6","Austin":"#1e93c6","Berlin":"#f2b827","Bonn":"#d6563c","Brussels":"#6a5c9e","Copenhagen":"#31a35f","Frankfurt am Main":"#ed8440","Hamburg":"#3863a0","London":"#a2cc3e","Munich":"#cc5068","Orlando":"#73427f","Paris":"#1e93c6","Prague":"#f2b827","Riga":"#d6563c","Rīga":"#6a5c9e","Stockholm":"#31a35f","Sydney":"#ed8440","Vienna":"#3863a0","Vilnius":"#a2cc3e","Warsaw":"#cc5068","Zurich":"#73427f"}</option>
+        <option name="charting.gridLinesX.showMajorLines">true</option>
+        <option name="charting.axisY.abbreviation">auto</option>
+        <option name="charting.legend.mode">seriesCompare</option>
+        <option name="charting.fieldDashStyles">{"Avg":"solid","Austin":"solid","Berlin":"solid","Bonn":"solid","Brussels":"solid","Copenhagen":"solid","Frankfurt am Main":"solid","Hamburg":"solid","London":"solid","Munich":"solid","Orlando":"solid","Paris":"solid","Prague":"solid","Riga":"solid","Rīga":"solid","Stockholm":"solid","Sydney":"solid","Vienna":"solid","Vilnius":"solid","Warsaw":"solid","Zurich":"solid"}</option>
+        <option name="displayview">analytics_workspace</option>
+      </chart>
+    </panel>
+    <panel>
+      <chart>
+        <title>weather.WindDirection</title>
+        <search>
+          <query>| mstats avg("weather.WindDirection") prestats=true WHERE "index"="s4c_mweather" $mstats_span$ BY name
+| timechart avg("weather.WindDirection") $timechart_span$ useother=false BY name WHERE max in top20
+| fields - _span*</query>
+          <earliest>$global_time_tok.earliest$</earliest>
+          <latest>$global_time_tok.latest$</latest>
+        </search>
+        <option name="charting.drilldown">none</option>
+        <option name="charting.chart">line</option>
+        <option name="charting.chart.nullValueMode">connect</option>
+        <option name="charting.chart.showDataLabels">none</option>
+        <option name="charting.fieldColors">{"Austin":"#1e93c6","Berlin":"#f2b827","Bonn":"#d6563c","Brussels":"#6a5c9e","Copenhagen":"#31a35f","Frankfurt am Main":"#ed8440","Hamburg":"#3863a0","London":"#a2cc3e","Munich":"#cc5068","Orlando":"#73427f","Paris":"#1e93c6","Prague":"#f2b827","Rīga":"#d6563c","Stockholm":"#6a5c9e","Sydney":"#31a35f","Vienna":"#ed8440","Vilnius":"#3863a0","Warsaw":"#a2cc3e","Zurich":"#cc5068"}</option>
+        <option name="charting.gridLinesX.showMajorLines">true</option>
+        <option name="charting.axisY.abbreviation">auto</option>
+        <option name="charting.legend.mode">seriesCompare</option>
+        <option name="charting.fieldDashStyles">{"Austin":"solid","Berlin":"solid","Bonn":"solid","Brussels":"solid","Copenhagen":"solid","Frankfurt am Main":"solid","Hamburg":"solid","London":"solid","Munich":"solid","Orlando":"solid","Paris":"solid","Prague":"solid","Rīga":"solid","Stockholm":"solid","Sydney":"solid","Vienna":"solid","Vilnius":"solid","Warsaw":"solid","Zurich":"solid"}</option>
+        <option name="displayview">analytics_workspace</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <chart>
+        <search>
+          <query>| mstats latest(weather.Temperature) latest(weather.Windspeed) latest(weather.Humidity) latest(weather.Clouds) span=1h prestats=t WHERE index=s4c_mweather  by name
+| timechart latest(weather.Temperature) AS Temperature latest(weather.Windspeed) as Wind latest(weather.Humidity) as Humidity latest(weather.Clouds) as Clouds span=1h limit=20 by name</query>
+          <earliest>$global_time_tok.earliest$</earliest>
+          <latest>$global_time_tok.latest$</latest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.rotation">0</option>
+        <option name="charting.axisTitleX.visibility">collapsed</option>
+        <option name="charting.axisTitleY.visibility">collapsed</option>
+        <option name="charting.axisTitleY2.visibility">collapsed</option>
+        <option name="charting.axisX.abbreviation">none</option>
+        <option name="charting.axisX.scale">linear</option>
+        <option name="charting.axisY.abbreviation">none</option>
+        <option name="charting.axisY.scale">linear</option>
+        <option name="charting.axisY2.abbreviation">none</option>
+        <option name="charting.axisY2.enabled">0</option>
+        <option name="charting.axisY2.scale">inherit</option>
+        <option name="charting.chart">area</option>
+        <option name="charting.chart.bubbleMaximumSize">50</option>
+        <option name="charting.chart.bubbleMinimumSize">10</option>
+        <option name="charting.chart.bubbleSizeBy">area</option>
+        <option name="charting.chart.nullValueMode">gaps</option>
+        <option name="charting.chart.showDataLabels">none</option>
+        <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
+        <option name="charting.chart.stackMode">default</option>
+        <option name="charting.chart.style">shiny</option>
+        <option name="charting.drilldown">none</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="charting.layout.splitSeries.allowIndependentYRanges">0</option>
+        <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
+        <option name="charting.legend.mode">standard</option>
+        <option name="charting.legend.placement">none</option>
+        <option name="charting.lineWidth">2</option>
+        <option name="refresh.display">progressbar</option>
+        <option name="trellis.enabled">1</option>
+        <option name="trellis.scales.shared">1</option>
+        <option name="trellis.size">medium</option>
+      </chart>
+    </panel>
+  </row>
+</form>

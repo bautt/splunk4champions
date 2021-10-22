@@ -1,0 +1,96 @@
+<dashboard theme="dark">
+  <label>Weather Map</label>
+  <row>
+    <panel>
+      <title>Latest weather on the map</title>
+      <map>
+        <search>
+          <query>index=s4c_weather 
+| rename weather{}.description AS description main.pressure AS pressure main.temp AS temp main.humidity AS humidity weather{}.main AS main
+|mvexpand name |mvexpand temp |mvexpand humidity |mvexpand wind.speed |mvexpand wind.deg |mvexpand pressure |mvexpand description |mvexpand coord.lat |mvexpand coord.lon
+|dedup name temp
+|table name temp humidity wind.speed wind.deg pressure  description coord.lat coord.lon
+|geostats latfield=coord.lat longfield=coord.lon  latest(temp) latest(wind.speed) latest(wind.deg) latest(pressure) latest(humidity) latest(description) latest(main) by name</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="mapping.choroplethLayer.colorBins">5</option>
+        <option name="mapping.choroplethLayer.colorMode">auto</option>
+        <option name="mapping.choroplethLayer.maximumColor">0xaf575a</option>
+        <option name="mapping.choroplethLayer.minimumColor">0x62b3b2</option>
+        <option name="mapping.choroplethLayer.neutralPoint">0</option>
+        <option name="mapping.choroplethLayer.shapeOpacity">0.75</option>
+        <option name="mapping.choroplethLayer.showBorder">1</option>
+        <option name="mapping.data.maxClusters">100</option>
+        <option name="mapping.legend.placement">bottomright</option>
+        <option name="mapping.map.center">(50,8)</option>
+        <option name="mapping.map.panning">1</option>
+        <option name="mapping.map.scrollZoom">0</option>
+        <option name="mapping.map.zoom">5</option>
+        <option name="mapping.markerLayer.markerMaxSize">50</option>
+        <option name="mapping.markerLayer.markerMinSize">22</option>
+        <option name="mapping.markerLayer.markerOpacity">0.8</option>
+        <option name="mapping.showTiles">1</option>
+        <option name="mapping.tileLayer.maxZoom">7</option>
+        <option name="mapping.tileLayer.minZoom">0</option>
+        <option name="mapping.tileLayer.tileOpacity">1</option>
+        <option name="mapping.type">marker</option>
+        <option name="trellis.enabled">0</option>
+        <option name="trellis.scales.shared">1</option>
+        <option name="trellis.size">medium</option>
+      </map>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Temperature as Metric</title>
+      <chart>
+        <search>
+          <query>| mstats avg("weather.Temperature") prestats=true WHERE "index"="s4c_metrics1" span=2d BY name
+| timechart avg("weather.Temperature") span=2d useother=false BY name WHERE max in top20
+| fields - _span*</query>
+          <earliest>-2y</earliest>
+          <latest>now</latest>
+          <sampleRatio>1</sampleRatio>
+        </search>
+        <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.rotation">0</option>
+        <option name="charting.axisTitleX.visibility">collapsed</option>
+        <option name="charting.axisTitleY.visibility">collapsed</option>
+        <option name="charting.axisTitleY2.visibility">visible</option>
+        <option name="charting.axisX.abbreviation">none</option>
+        <option name="charting.axisX.scale">linear</option>
+        <option name="charting.axisY.abbreviation">auto</option>
+        <option name="charting.axisY.includeZero">1</option>
+        <option name="charting.axisY.scale">linear</option>
+        <option name="charting.axisY2.abbreviation">none</option>
+        <option name="charting.axisY2.enabled">0</option>
+        <option name="charting.axisY2.scale">inherit</option>
+        <option name="charting.chart">line</option>
+        <option name="charting.chart.bubbleMaximumSize">50</option>
+        <option name="charting.chart.bubbleMinimumSize">10</option>
+        <option name="charting.chart.bubbleSizeBy">area</option>
+        <option name="charting.chart.nullValueMode">connect</option>
+        <option name="charting.chart.showDataLabels">none</option>
+        <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
+        <option name="charting.chart.stackMode">default</option>
+        <option name="charting.chart.style">shiny</option>
+        <option name="charting.drilldown">none</option>
+        <option name="charting.fieldColors">{"Avg":"#1e93c6","Austin":"#1e93c6","Orlando":"#f2b827","Paris":"#d6563c","Prague":"#6a5c9e","Zurich":"#31a35f","Berlin":"#ed8440","Bonn":"#3863a0","Brussels":"#a2cc3e","Copenhagen":"#cc5068","Frankfurt am Main":"#73427f","Hamburg":"#1e93c6","London":"#f2b827","Munich":"#d6563c","Rīga":"#6a5c9e","Stockholm":"#31a35f","Sydney":"#ed8440","Vienna":"#3863a0","Vilnius":"#a2cc3e","Warsaw":"#cc5068","Frankfurt":"#73427f"}</option>
+        <option name="charting.fieldDashStyles">{"Avg":"Solid","Austin":"Solid","Orlando":"Solid","Paris":"Solid","Prague":"Solid","Zurich":"Solid","Berlin":"Solid","Bonn":"Solid","Brussels":"Solid","Copenhagen":"Solid","Frankfurt am Main":"Solid","Hamburg":"Solid","London":"Solid","Munich":"Solid","Rīga":"Solid","Stockholm":"Solid","Sydney":"Solid","Vienna":"Solid","Vilnius":"Solid","Warsaw":"Solid","Frankfurt":"Solid"}</option>
+        <option name="charting.gridLinesX.showMajorLines">1</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="charting.layout.splitSeries.allowIndependentYRanges">0</option>
+        <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
+        <option name="charting.legend.mode">seriesCompare</option>
+        <option name="charting.legend.placement">right</option>
+        <option name="charting.lineWidth">2</option>
+        <option name="trellis.enabled">0</option>
+        <option name="trellis.scales.shared">1</option>
+        <option name="trellis.size">medium</option>
+      </chart>
+    </panel>
+  </row>
+</dashboard>

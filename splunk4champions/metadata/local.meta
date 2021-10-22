@@ -150,3 +150,8 @@ modtime = 1633250421.421213000
 owner = admin
 version = 8.2.2.1
 modtime = 1633506134.945020000
+
+[views/weather_example]
+owner = admin
+version = 8.2.2.1
+modtime = 1634714915.699643000
