@@ -22,8 +22,8 @@ Splunk admins
 - Dashboard hints 
 
 ### Benefit:
-Sustainable and energy saving usage of Splunk
-New insights and inspiration
+- Sustainable and energy saving usage of Splunk
+- New insights and inspiration
 
 ### Design Goals: 
 Zero-Powerpoint: all information needed is included in the app
