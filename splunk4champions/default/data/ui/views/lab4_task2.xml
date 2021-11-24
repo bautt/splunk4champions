@@ -13,9 +13,9 @@
           </tr>
          <tr>
           <td>
-              <p>Create a query:<br/>Average close per day for ^GDAXI for current year to date.</p>
+              <p>Create a query:<br/>Average close per day for ^GDAXI to date.</p>
               <p>
-                Click <a target="_blank" href="search?earliest=0&amp;q=search index%3D&quot;stocks&quot; sourcetype%3D&quot;s4c_quotes&quot; |%20 timechart span%3D4h avg(Close) as close&amp;dispatch.sample_ratio=1&amp;workload_pool=&amp;earliest=%40y&amp;latest=now&amp;display.page.search.tab=visualizations&amp;display.general.type=visualizations">here</a> to perform search.
+                Click <a target="_blank" href="search?earliest=0&amp;q=search index%3D&quot;stocks&quot; sourcetype%3D&quot;s4c_quotes&quot; |%20 timechart span%3D1d avg(Close) as close&amp;dispatch.sample_ratio=1&amp;workload_pool=&amp;earliest=%40y&amp;latest=now&amp;display.page.search.tab=visualizations&amp;display.general.type=visualizations">here</a> to perform search.
               </p>
           </td>
         </tr>
@@ -26,7 +26,7 @@
   <row>
     <panel>
       <html>
-      <code>index="s4c_stocks" sourcetype="s4c_quotes" |  timechart span=4h avg(Close) as close</code>
+      <code>index="s4c_stocks" sourcetype="s4c_quotes" |  timechart span=1d avg(Close) as close</code>
       </html>
     </panel>
   </row>
@@ -34,7 +34,7 @@
     <panel>
       <chart>
         <search>
-          <query>index="s4c_stocks" sourcetype="s4c_quotes" |  timechart span=4h avg(Close) as close</query>
+          <query>index="s4c_stocks" sourcetype="s4c_quotes" |  timechart span=1d avg(Close) as close</query>
           <earliest>0</earliest>
           <sampleRatio>1</sampleRatio>
         </search>
