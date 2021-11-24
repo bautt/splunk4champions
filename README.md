@@ -38,31 +38,31 @@ This workshop contains 6 Main sections, each divided in multiple subsections.
 ### Splunk Settings 
 This is an easy introduction: quick review of the relevant settings for Splunk user interface.
 
-![](https://github.com/bautt/splunk4champions/blob/master/1-Settings.png)
+![](https://github.com/bautt/splunk4champions/blob/master/images/1-Settings.png)
 ### Job Inspector
 How to use job inspector and interpret results, how to share job inspector results with colleagues. 
 
-![](https://github.com/bautt/splunk4champions/blob/master/2-JobInspector.png)
+![](https://github.com/bautt/splunk4champions/blob/master/images/2-JobInspector.png)
 
 ### Theory
 How is data stored and searched in Splunk? Some basic understanding of Splunk deployment and internal architecture is important if you want to optimize. results. We also included most popular search tips and a quiz here. 
 
-![](https://github.com/bautt/splunk4champions/blob/master/3-Theory.png)
+![](https://github.com/bautt/splunk4champions/blob/master/images/3-Theory.png)
 
 ### Data
 We have last five years of DAX close data and few years of weather data - let us see, if we can gain any meaningful insights from it. 
 
-![](https://github.com/bautt/splunk4champions/blob/master/4-Data.png)
+![](https://github.com/bautt/splunk4champions/blob/master/images/4-Data.png)
 
 ### Metrics
 Why would you store metric data as a text? This section is an introduction in to Splunk metrics with some hands-on exercises. 
 
-![](https://github.com/bautt/splunk4champions/blob/master/5-Metrics.png)
+![](https://github.com/bautt/splunk4champions/blob/master/images/5-Metrics.png)
 
 ### Dashboards
 Examples for getting more from the dashboars while saving the planet. 
 
-![](https://github.com/bautt/splunk4champions/blob/master/6-Dashboards.png)
+![](https://github.com/bautt/splunk4champions/blob/master/images/6-Dashboards.png)
 
 
 
