@@ -8,4 +8,5 @@ datestart = datenow + delta
 tsstart = mktime(utc.localize(datestart).utctimetuple())
 tsend = mktime(utc.localize(datenow).utctimetuple())
 link = "https://query1.finance.yahoo.com/v7/finance/download/%5EGDAXI?period1={tsstart:.0f}&period2={tsend:.0f}&interval=1d&events=history&includeAdjustedClose=true".format(tsstart=tsstart,tsend=tsend )
-urllib.request.urlretrieve(link, "{tsstart:.0f}_gdax_download.csv".format(tsstart=tsstart))
+#urllib.request.urlretrieve(link, "{tsstart:.0f}_gdax_download.csv".format(tsstart=tsstart))
+urllib.request.urlretrieve(link, "gdax_download.csv".format(tsstart=tsstart))
