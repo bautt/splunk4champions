@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # update DAX data 
+echo "starting" 
 cd /home/pi/splunk4champions/splunk4champions/static
  /usr/bin/python3 s4c_getdata.py 
   sleep 30
