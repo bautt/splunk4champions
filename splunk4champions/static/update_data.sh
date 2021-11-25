@@ -12,7 +12,7 @@ cd /home/pi/splunk4champions/splunk4champions/static
 
       # github upload
 
-      /usr/bin/git add .
-      /usr/bin/git pull
-      /usr/bin/git commit -m "Scripted daily data update `date`"
-      /usr/bin/git push 
+      /usr/bin/git -C /home/pi/splunk4champions/splunk4champions/static add .
+      /usr/bin/git -C /home/pi/splunk4champions/splunk4champions/static pull
+      /usr/bin/git -C /home/pi/splunk4champions/splunk4champions/static commit -m "Scripted daily data update `date`"
+      /usr/bin/git -C /home/pi/splunk4champions/splunk4champions/static push 
