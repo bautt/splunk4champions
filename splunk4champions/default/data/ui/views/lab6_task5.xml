@@ -5,6 +5,7 @@
       <eval token="timezone">strftime(time(), "%z")</eval>
     </preview>
   </search>
+  
   <row>
     <panel>
       <title>Task 2.3</title>
@@ -30,6 +31,19 @@
       <html>
         <p>Your timezone: $timezone$</p>
       </html>
+    </panel>
+  </row>
+
+  <row>
+    <panel>
+      <title>Task 2.4</title>
+      <html>
+
+                 <p>
+                <i>Explore and utilize default tokens in this dashboard:</i>
+                <a target="_blank" href="tokens">/app/splunk4champions/testvariables</a>              </p>
+
+    </html>
     </panel>
   </row>
 </dashboard>
