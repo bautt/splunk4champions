@@ -36,9 +36,11 @@
           </tr>
          <tr>
           <td style="text-align: center;">
-              <code>index="s4c_weather" Frankfurt earliest="01/01/2018:00:00:00" latest="12/31/2021:24:00:00"| rename "weather{}.description" as Description | stats  count as eventcount by Description | where eventcount &gt; 10000 </code>
+              <code>index="s4c_weather" Frankfurt earliest="01/01/2018:00:00:00" latest="12/31/2021:24:00:00"
+              <br>| rename "weather{}.description" as Description | stats  count as eventcount by Description | where eventcount &gt; 10000 </code>
               <h3>VS:</h3>
-              <code>index="s4c_weather" Frankfurt earliest="01/01/2018:00:00:00" latest="12/31/2021:24:00:00"| stats  count as eventcount by "weather{}.description" | where eventcount &gt; 10000 | rename "weather{}.description" as Description</code>
+              <code>index="s4c_weather" Frankfurt earliest="01/01/2018:00:00:00" latest="12/31/2021:24:00:00"
+              <br>| stats  count as eventcount by "weather{}.description" | where eventcount &gt; 10000 | rename "weather{}.description" as Description</code>
 
           </td>
         </tr>
