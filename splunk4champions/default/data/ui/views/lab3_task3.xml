@@ -129,9 +129,9 @@
             </tr>
            <tr>
             <td style="text-align: center;">
-                <code>index=s4c_weather earliest="01/01/2020:00:00:00" latest="12/31/2020:24:00:00" | stats count by name </code>
+                <code>index=s4c_weather earliest="01/01/2018:00:00:00" latest="12/31/2021:24:00:00" | stats count by name </code>
                 <h3>VS:</h3>
-                <code>|tstats count  WHERE earliest="01/01/2020:00:00:00" latest="12/31/2020:24:00:00" index="s4c_weather"   by name</code>
+                <code>|tstats count  WHERE earliest="01/01/2018:00:00:00" latest="12/31/2021:24:00:00" index="s4c_weather"   by name</code>
             </td>
           </tr>
         </table>
@@ -152,9 +152,9 @@
             </tr>
            <tr>
             <td style="text-align: center;">
-                <code>|tstats avg(main.temp) max(main.temp) min(main.temp)  median(main.temp)  p95(main.temp)  p5(main.temp) WHERE earliest="01/01/2019:00:00:00" latest="12/31/2020:24:00:00" index=s4c_weather by name</code>
+                <code>|tstats avg(main.temp) max(main.temp) min(main.temp)  median(main.temp)  p95(main.temp)  p5(main.temp)  WHERE earliest="01/01/2018:00:00:00" latest="12/31/2021:24:00:00" index=s4c_weather by name</code>
                 <h3>VS:</h3>
-                <code>earliest="01/01/2019:00:00:00" latest="12/31/2020:24:00:00" index=s4c_weather |stats avg(main.temp) max(main.temp) min(main.temp)  median(main.temp)  p95(main.temp)  p5(main.temp)   by name</code>
+                <code>earliest="01/01/2018:00:00:00" latest="12/31/2021:24:00:00" index=s4c_weather |stats avg(main.temp) max(main.temp) min(main.temp)  median(main.temp)  p95(main.temp)  p5(main.temp)   by name</code>
             </td>
           </tr>
         </table>
