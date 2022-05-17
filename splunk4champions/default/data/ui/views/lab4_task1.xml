@@ -23,7 +23,8 @@
   <row>
     <panel>
       <html>
-      <code>index="s4c_weather" sourcetype=s4c_weather Frankfurt | timechart avg(main.temp) span=1d as temperature</code>
+      <code>index="s4c_weather" sourcetype=s4c_weather Frankfurt earliest=@y latest=now
+      <br/>| timechart avg(main.temp) span=1d as temperature</code>
       </html>
     </panel>
   </row>
@@ -31,8 +32,9 @@
     <panel>
       <chart>
         <search>
-          <query>index="s4c_weather" sourcetype=s4c_weather Frankfurt | timechart avg(main.temp) span=1d as temperature</query>
-          <earliest>@y</earliest>
+          <query>index="s4c_weather" sourcetype=s4c_weather Frankfurt earliest=@y latest=now
+          <br/>| timechart avg(main.temp) span=1d as temperature</query>
+          <earliest>-3y</earliest>
           <latest>now</latest>
           <sampleRatio>1</sampleRatio>
         </search>
@@ -96,7 +98,7 @@
   <row>
     <panel>
       <html>
-      <code>index="s4c_weather" sourcetype=s4c_weather | spath name | search name="Frankfurt am Main" | timechart span=1d avg(main.temp) as temperature | trendline sma20(temperature) as trend</code>
+      <code>index="s4c_weather" sourcetype=s4c_weather  earliest=@y latest=now | spath name | search name="Frankfurt am Main" | timechart span=1d avg(main.temp) as temperature | trendline sma20(temperature) as trend</code>
       </html>
     </panel>
   </row>
@@ -104,7 +106,7 @@
     <panel>
       <chart>
         <search>
-          <query>index="s4c_weather" sourcetype=s4c_weather Frankfurt | timechart span=1d avg(main.temp) as temperature  | trendline sma20(temperature) as trend</query>
+          <query>index="s4c_weather" sourcetype=s4c_weather Frankfurt  earliest=@y latest=now | timechart span=1d avg(main.temp) as temperature  | trendline sma20(temperature) as trend</query>
           <earliest>@y</earliest>
           <latest>now</latest>
           <sampleRatio>1</sampleRatio>
