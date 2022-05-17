@@ -62,7 +62,6 @@
           <td>Chinese (Taiwan)</td>
         </tr>
         </table>
-        <p> You could also translate your app to languages which are not in the list, follow this documentation: <a href=https://docs.splunk.com/Documentation/SplunkCloud/latest/AdvancedDev/TranslateSplunk></a> <p>
       </html>
     </panel>
   </row>
