@@ -37,10 +37,14 @@
          <tr>
           <td style="text-align: center;">
               <code>index="s4c_weather" Frankfurt earliest="01/01/2018:00:00:00" latest="12/31/2021:24:00:00"
-              <br/>| rename "weather{}.description" as Description | stats  count as eventcount by Description | where eventcount &gt; 10000 </code>
+              <br/>| rename "weather{}.description" as Description 
+              <br/>| stats  count as eventcount by Description 
+              <br/>| where eventcount &gt; 10000 </code>
               <h3>VS:</h3>
               <code>index="s4c_weather" Frankfurt earliest="01/01/2018:00:00:00" latest="12/31/2021:24:00:00"
-              <br/>| stats  count as eventcount by "weather{}.description" | where eventcount &gt; 10000 | rename "weather{}.description" as Description</code>
+              <br/>| stats  count as eventcount by "weather{}.description" 
+              <br/>| where eventcount &gt; 10000 
+              <br/>| rename "weather{}.description" as Description</code>
 
           </td>
         </tr>
@@ -62,9 +66,11 @@
             </tr>
            <tr>
             <td style="text-align: center;">
-                <code>index="_introspection" component=PerProcess "data.process"=splunkd| stats last(_time) as _time, count as eventcount by "data.pid"| rename "data.pid" as processId | where eventcount &gt; 10</code>
+                <code>index="_introspection" component=PerProcess "data.process"=splunkd
+                <br/>| stats last(_time) as _time, count as eventcount by "data.pid"| rename "data.pid" as processId | where eventcount &gt; 10</code>
                 <h3>VS:</h3>
-                <code>index="_introspection"  "data.process"=splunkd | transaction "data.pid"| rename "data.pid" as processId |  table _time, processId, eventcount| search eventcount &gt; 10</code>
+                <code>index="_introspection"  "data.process"=splunkd 
+                <br/>| transaction "data.pid"| rename "data.pid" as processId |  table _time, processId, eventcount| search eventcount &gt; 10</code>
             </td>
           </tr>
         </table>
@@ -85,9 +91,12 @@
             </tr>
            <tr>
             <td style="text-align: center;">
-                <code>index="_audit" | join type=left host [search index="_audit" | stats count as eventcount by host]</code>
+                <code>index="_audit" 
+                <br/>| join type=left host [search index="_audit" 
+                <br/>| stats count as eventcount by host]</code>
                 <h3>VS:</h3>
-                <code>index="_audit" | eventstats count as eventcount by host</code>
+                <code>index="_audit" 
+                <br/>| eventstats count as eventcount by host</code>
             </td>
           </tr>
         </table>
@@ -108,9 +117,14 @@
             </tr>
            <tr>
             <td style="text-align: center;">
-                <code>index="_audit" | stats count as host_count by host | appendcols [search index="_audit" | stats count by component]</code>
+                <code>index="_audit" 
+                <br/>| stats count as host_count by host 
+                <br/>| appendcols [search index="_audit" 
+                <br/>| stats count by component]</code>
                 <h3>VS:</h3>
-                <code>index="_audit" | eventstats count as host_count by host | stats count by component, host_count, host</code>
+                <code>index="_audit" 
+                <br/>| eventstats count as host_count by host 
+                <br/>| stats count by component, host_count, host</code>
             </td>
           </tr>
         </table>
@@ -131,7 +145,8 @@
             </tr>
            <tr>
             <td style="text-align: center;">
-                <code>index=s4c_weather earliest="01/01/2018:00:00:00" latest="12/31/2021:24:00:00" | stats count by name </code>
+                <code>index=s4c_weather earliest="01/01/2018:00:00:00" latest="12/31/2021:24:00:00" 
+                <br/>| stats count by name </code>
                 <h3>VS:</h3>
                 <code>|tstats count  WHERE earliest="01/01/2018:00:00:00" latest="12/31/2021:24:00:00" index="s4c_weather"   by name</code>
             </td>
