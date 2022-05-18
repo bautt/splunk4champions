@@ -32,8 +32,7 @@
     <panel>
       <chart>
         <search>
-          <query>index="s4c_weather" sourcetype=s4c_weather Frankfurt earliest=@y latest=now
-          <br/>| timechart avg(main.temp) span=1d as temperature</query>
+          <query>index="s4c_weather" sourcetype=s4c_weather Frankfurt earliest=@y latest=now | timechart avg(main.temp) span=1d as temperature</query>
           <earliest>-3y</earliest>
           <latest>now</latest>
           <sampleRatio>1</sampleRatio>
