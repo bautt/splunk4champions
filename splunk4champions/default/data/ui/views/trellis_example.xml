@@ -1,4 +1,4 @@
-<dashboard>
+<dashboard  version="1.1" >
   <label>Trellis Example</label>
   <description>|tstats count  WHERE index="s4c_weather" name="Frankfurt am Main" OR name="London" OR name="Vienna" OR name="Sydney" OR name="Stockholm" OR name="Munich" earliest="01/01/2020:00:00:00" latest="12/31/2020:24:00:00"  by name "weather{}.main"
 |xyseries name "weather{}.main" count</description>

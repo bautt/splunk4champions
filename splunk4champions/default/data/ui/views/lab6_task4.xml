@@ -1,4 +1,4 @@
-<dashboard stylesheet="s4c_dashboards.css">
+<dashboard version="1.1" stylesheet="s4c_dashboards.css">
   <row>
     <panel>
       <title>Task 2.2</title>

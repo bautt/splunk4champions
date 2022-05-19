@@ -1,4 +1,4 @@
-<dashboard stylesheet="s4c_dashboards.css">
+<dashboard  version="1.1" stylesheet="s4c_dashboards.css">
   <search id="Base_Search">
     <query>(index="weather" sourcetype=s4c_weather name="Frankfurt am Main") OR (index="stocks" sourcetype="s4c_quotes")</query>
     <earliest>-1y@d</earliest>

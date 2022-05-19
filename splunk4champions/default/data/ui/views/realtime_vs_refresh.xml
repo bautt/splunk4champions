@@ -1,4 +1,4 @@
-<dashboard theme="dark">
+<dashboard  version="1.1" theme="dark">
   <label>Realtime_vs_refresh</label>
   <row>
     <panel>
