@@ -7,7 +7,6 @@ require([
     'backbone',
     'collections/services/data/ui/Views',
     'models/services/data/ui/View',
-    'View',
     'splunkjs/mvc',
     'bootstrap.affix',
     'bootstrap.scrollspy'
