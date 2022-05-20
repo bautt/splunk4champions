@@ -2,7 +2,6 @@ var initHash = location.hash;
 require([
     'jquery',
     'underscore',
-    'models/services/data/ui/View',
     'splunkjs/mvc'
     
 ], function($, _, ViewModel, mvc) {
